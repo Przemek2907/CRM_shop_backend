@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/PER01</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!--<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>-->
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+        <!-- update - tworzy nowa kolumne / kolumny, nie narusza danych -->
+        <!-- create - calkowicie usuwa schemat i tworzy go na nowo -->
+        <!-- validate - gdy stan encji nie zgadza sie z tym co w db to wyjatek -->
+        <!-- validate - stosować do pracy produkcyjnej zawsze -->
+        <!-- create-drop - tworzy schemat gdy tworzysz polaczenie z baza i niszczy go jak konczysz polaczenie z db - przez zycie obiektu SessionFactory -->
+        <property name="hbm2ddl.auto">update</property>
+        <property name="show_sql">false</property>
+        <property name="connection.pool_size">3000</property>
+
+        <mapping class="com.przemek.zochowski.model.Customer"/>
+        <mapping class="com.przemek.zochowski.model.Payment"/>
+        <mapping class="com.przemek.zochowski.model.Category"/>
+        <mapping class="com.przemek.zochowski.model.Country"/>
+        <mapping class="com.przemek.zochowski.model.CustomerOrder"/>
+        <mapping class="com.przemek.zochowski.model.Errors"/>
+        <mapping class="com.przemek.zochowski.model.Producer"/>
+        <mapping class="com.przemek.zochowski.model.Product"/>
+        <mapping class="com.przemek.zochowski.model.Shop"/>
+        <mapping class="com.przemek.zochowski.model.Stock"/>
+        <mapping class="com.przemek.zochowski.model.Trade"/>
+
+
+    </session-factory>
+</hibernate-configuration>
