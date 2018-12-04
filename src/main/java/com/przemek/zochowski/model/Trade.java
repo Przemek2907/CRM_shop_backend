@@ -1,9 +1,6 @@
 package com.przemek.zochowski.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -22,6 +19,8 @@ public class Trade {
     @GeneratedValue
     private Long id;
     private String industry;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "trade")
     private Set<Producer> producers;
 

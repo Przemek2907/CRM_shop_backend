@@ -46,15 +46,17 @@ public class CustomerService {
                     .findByName(dataManager.getCountryName())
                     .orElseThrow(() -> new NullPointerException("COUNTRY IS NULL"));
 
+
             List<Customer> customers = customerRepository.findAll()
                     .stream()
                     .filter(c -> c.getCountry().getId().equals(country.getId()))
+                    .filter(c -> c.getId().equals(customer.getId()))
                     .collect(Collectors.toList());
 
             return customers.contains(customer);
         } catch (Exception e) {
+            e.printStackTrace();
             throw new MyException(ErrorCode.SERVICE, e.getMessage());
-
         }
     }
 
@@ -77,7 +79,6 @@ public class CustomerService {
 
             Country country = countryRepository
                     .findByName(dataManager.getCountryName())
-                    //orElse(modelMapper.fromCountryDtoToCountry(CountryDto.builder().name(dataManager.getStr3()).build()));
                     .orElseThrow(() -> new NullPointerException("COUNTRY DOESN'T EXIST"));
 
 

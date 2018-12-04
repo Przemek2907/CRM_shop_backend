@@ -1,9 +1,6 @@
 package com.przemek.zochowski.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
@@ -28,13 +25,21 @@ public class Product {
     @Pattern(regexp = "([A-Z]+\\s*)*")
     private String name;
     private BigDecimal price;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany ( cascade = CascadeType.PERSIST, mappedBy = "product")
     private Set<Stock> stocks;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany (cascade = CascadeType.PERSIST, mappedBy = "product")
     private Set<CustomerOrder> customerOrders;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToOne (cascade = CascadeType.PERSIST)
     @JoinColumn (name = "producer_id")
     private Producer producer;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToOne (cascade = CascadeType.PERSIST)
     @JoinColumn (name = "category_id")
     private Category category;
@@ -44,6 +49,8 @@ public class Product {
             joinColumns = @JoinColumn(name = "product_id")
     )
     @Column(name = "guarantee_component")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @Enumerated(EnumType.STRING)
     private Set<EGuarantee> guarantees;
 
@@ -57,7 +64,7 @@ public class Product {
                // ", customerOrders=" + customerOrders +
                /* ", producer=" + producer +
                ", category=" + category +*/
-                ", guarantees=" + guarantees +
+               // ", guarantees=" + guarantees +
                 '}';
     }
 
@@ -68,16 +75,16 @@ public class Product {
         Product product = (Product) o;
         return Objects.equals(id, product.id) &&
                 Objects.equals(name, product.name) &&
-                Objects.equals(price, product.price) &&
+                Objects.equals(price, product.price) ;
                // Objects.equals(stocks, product.stocks) &&
                 //Objects.equals(customerOrders, product.customerOrders) &&
               //Objects.equals(producer, product.producer) &&
                 //Objects.equals(category, product.category) &&
-               Objects.equals(guarantees, product.guarantees);
+              // Objects.equals(guarantees, product.guarantees);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, price, guarantees);
+        return Objects.hash(id, name, price /*guarantees*/);
     }
 }

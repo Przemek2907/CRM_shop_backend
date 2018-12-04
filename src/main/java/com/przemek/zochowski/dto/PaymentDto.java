@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-
+@Data
 public class PaymentDto {
 
     private Long id;
@@ -27,7 +27,7 @@ public class PaymentDto {
         return new PaymentDtoBuilder();
     }
 
-    public Long getId() {
+   /* public Long getId() {
         return id;
     }
 
@@ -56,7 +56,7 @@ public class PaymentDto {
     public int hashCode() {
         return Objects.hash(id, payment);
     }
-
+*/
     public static class PaymentDtoBuilder {
         private Long id;
         private EPayment payment;

@@ -11,7 +11,7 @@ public class MyException extends RuntimeException {
 
 
     public MyException (ErrorCode errorCode, String errorMessage){
-        this.errorCode = ErrorCode.valueOf(errorCode.name());
+        this.errorCode = errorCode;
         this.errorMessage = errorMessage;
         this.errorDateTime = LocalDateTime.now();
     }

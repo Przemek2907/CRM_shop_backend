@@ -31,36 +31,41 @@ public class DataManager {
     private Long orderedQuantity;
     private EGuarantee eGuarantee;
     private Integer age;
+    private Integer min_age_range;
+    private Integer max_age_range;
     private Integer quantity;
     private BigDecimal price;
     private BigDecimal discount;
     private LocalDate localDate;
     private Long theIdOfTheSelectedProduct;
+    private Integer choiceId;
+    private Integer thresholdAmount;
 
 
     @Override
     public String toString() {
-        String s =  customerName + '\''
-                 + customerSurname + '\''
-                 + countryName + '\'' + productName + '\'' + shopName + '\''
-               + producerName + '\''
-                 + paymentType + '\'' +
-                 industryName + '\'' +
-               categoryName + '\'' +
-                 orderedQuantity + '\'' +
-                 eGuarantee + '\'' +
-                 age + '\''
-                 + quantity + '\'' +
-                  price + '\'' +
-                  discount + '\'' +
-                 localDate + '\'' +
-                  theIdOfTheSelectedProduct;
 
-        String result = s.replaceAll("null", "");
-        return result;
+        StringBuilder message = new StringBuilder();
+        message.append(customerName == null || customerName.isEmpty() ? "" : "CUSTOMER NAME: " + customerName + "\n");
+        message.append(customerSurname == null || customerSurname.isEmpty() ? "" : "CUSTOMER SURNAME: " + customerSurname + "\n");
+        message.append(countryName == null || countryName.isEmpty() ? "" : "COUNTRY NAME: " + countryName + "\n");
+        message.append(productName == null || productName.isEmpty() ? "" : "PRODUCT NAME: " + productName + "\n");
+        message.append(shopName == null || shopName.isEmpty() ? "" : "SHOP NAME: " + shopName + "\n");
+        message.append(producerName == null || producerName.isEmpty() ? "" : "PRODUCER NAME: " + producerName + "\n");
+        message.append(paymentType == null || paymentType.isEmpty() ? "" : "PAYMENT NAME: " + paymentType + "\n");
+        message.append(industryName == null || industryName.isEmpty() ? "" : "INDUSTRY NAME: " + industryName + "\n");
+        message.append(orderedQuantity == null ? "" : "ORDERED QUANTITY: " + orderedQuantity + "\n");
+        message.append(eGuarantee == null ? "" : "GUARANTEE COMPONENTS: " + eGuarantee + "\n");
+        message.append(quantity == null ? "" : "QUANTITY: " + quantity + "\n");
+        message.append( age == null ? "" : "AGE: " +  age + "\n");
+        message.append(price == null  ? "" : "PRICE: " + price + "\n");
+        message.append(discount == null ? "" : "DISCOUNT: " + discount + "\n");
+        message.append(localDate == null ? "" : "LOCAL DATE: " + localDate + "\n");
+        message.append(theIdOfTheSelectedProduct == null ? "" : "ID OF THE PRODUCT: " + theIdOfTheSelectedProduct + "\n");
+        message.append(theIdOfTheSelectedProduct == null ? "" : "ID OF THE PRODUCT: " + theIdOfTheSelectedProduct + "\n");
+        message.append( min_age_range == null ? "" : "MINIMUM AGE RANGE: " + min_age_range + "\n");
+        message.append( max_age_range == null ? "" : "MAXIMUM AGE RANGE: " + max_age_range + "\n");
+
+        return message.toString();
     }
 }
-
-//  List<Object> listOfFields = Arrays.asList(
-//              customerName,customerSurname,countryName,productName,shopName,producerName,paymentType,industryName,categoryName,orderedQuantity,
-//                eGuarantee,age,quantity,price,discount,localDate,theIdOfTheSelectedProduct);

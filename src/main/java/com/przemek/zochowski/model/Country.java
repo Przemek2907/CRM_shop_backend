@@ -1,9 +1,6 @@
 package com.przemek.zochowski.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -21,12 +18,17 @@ public class Country {
     @Id
     @GeneratedValue
     private Long id;
-    @Pattern(regexp = "([A-Z]+\\s*)*")
     private String name;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany (cascade = CascadeType.PERSIST  , mappedBy = "country")
     private Set<Customer> customers;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany (cascade = CascadeType.PERSIST  ,mappedBy = "country")
     private Set<Shop> shops;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany (cascade = CascadeType.PERSIST, mappedBy = "country")
     private Set<Producer> producers;
 

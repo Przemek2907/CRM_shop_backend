@@ -1,10 +1,7 @@
 package com.przemek.zochowski.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -23,14 +20,15 @@ public class Customer {
     @Id
     @GeneratedValue
     private Long id;
-    @Pattern(regexp = "([A-Z]+\\s*)*")
     private String name;
-    @Pattern(regexp = "([A-Z]+\\s*)*")
     private String surname;
-    @Min(value = 18)
     private int age;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany (cascade = CascadeType.PERSIST, mappedBy = "customer")
     private Set<CustomerOrder> orders;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToOne (cascade = CascadeType.PERSIST)
     @JoinColumn(name = "country_id")
     private Country country;

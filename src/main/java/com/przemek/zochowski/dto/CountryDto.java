@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-
+@Data
 public class CountryDto {
 
     private Long id;
@@ -26,7 +26,7 @@ public class CountryDto {
         return new CountryDtoBuilder();
     }
 
-    public Long getId() {
+ /*   public Long getId() {
         return id;
     }
 
@@ -54,7 +54,7 @@ public class CountryDto {
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
-    }
+    }*/
 
     public static class CountryDtoBuilder {
         private Long id;

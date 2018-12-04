@@ -63,7 +63,7 @@ public class ProducerService {
         try {
 
             if (isProducerInCountry(dataManager)) {
-                throw new IllegalArgumentException("THIS PRODUCER ALREADY EXISTS IN GIVEN COUNTRY");
+                throw new IllegalArgumentException("THIS PRODUCER ALREADY EXISTS IN THE GIVEN COUNTRY");
             }
 
             Producer producer = modelMapper.fromProducerDtoToProducer(

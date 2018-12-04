@@ -3,6 +3,7 @@ package com.przemek.zochowski;
 
 import com.przemek.zochowski.exceptions.MyException;
 import com.przemek.zochowski.kmservice.*;
+import com.przemek.zochowski.model.CustomerOrder;
 import com.przemek.zochowski.model.EPayment;
 import com.przemek.zochowski.model.Product;
 import com.przemek.zochowski.repository.generic.DbConnection;
@@ -18,7 +19,6 @@ import java.util.Map;
 
 /**
  * Hello world!
- *
  */
 public class App {
 
@@ -26,17 +26,17 @@ public class App {
         ErrorService errorService = new ErrorService();
         //ReportsAboutProducts productsServiceLayer = new ReportsAboutProducts();
         ShopServiceLayer shopServiceLayer = new ShopServiceLayer();
-         MainControlPanel mainControlPanel = new MainControlPanel();
+        MainControlPanel mainControlPanel = new MainControlPanel();
 
 
-            //DataInitializeFromFile dataInitializeFromFile = new DataInitializeFromFile();
-            //dataInitializeFromFile.initializeData();
-            // DataCleanupService dataCleaner = new DataCleanupServiceImpl();
-            // dataCleaner.removeAll();
-            //productsServiceLayer.getListOfProductsWithMaxPricePerCategory();
-            //productsServiceLayer.getListOfProducts();
-            //shopServiceLayer.getListofProductsWithAdifferentCountryThanTheShop();
-            mainControlPanel.userInteractionWithTheApp();
+        //DataInitializeFromFile dataInitializeFromFile = new DataInitializeFromFile();
+        //dataInitializeFromFile.initializeData();
+        // DataCleanupService dataCleaner = new DataCleanupServiceImpl();
+        // dataCleaner.removeAll();
+        //productsServiceLayer.getListOfProductsWithMaxPricePerCategory();
+        //productsServiceLayer.getListOfProducts();
+        //shopServiceLayer.getListofProductsWithAdifferentCountryThanTheShop();
+        mainControlPanel.userInteractionWithTheApp();
       /*  } catch (MyException e) {
 
                 System.out.println(e.getErrorMessage());
@@ -67,9 +67,8 @@ public class App {
                 .build());*/
 
 
-
         //
-       //(String name, String surname, String productName, int requestedAmount, LocalDate localDate, String payment)
+        //(String name, String surname, String productName, int requestedAmount, LocalDate localDate, String payment)
  /* CustomerOrderService customerOrderService = new CustomerOrderService();
         customerOrderService
                 .placingAnOrder(DataManager.builder().customerName("NARUTO")
@@ -86,13 +85,14 @@ public class App {
         List<DataManager> listData = reportsAboutShops.listOfShopsWithProductsFromAbroad();
         listData.forEach(System.out::println);
 
+*/
 
+/*ReportsAboutProducts reportsAboutProducts = new ReportsAboutProducts();
 
-ReportsAboutProducts reportsAboutProducts = new ReportsAboutProducts();
+        List<Product> productWithGuarantee = reportsAboutProducts.getProductWithWarranty("EXCHANGE");
+        productWithGuarantee.forEach(System.out::println);*/
 
-        List<Product> productWithGuarantee = reportsAboutProducts.getProductWithWarranty("EXCHANGE", "MONEY_BACK");
-        productWithGuarantee.forEach(System.out::println);
-
+/*
 
         List<DataManager> products = reportsAboutProducts.getProductsOrderedBySpecificCustomer("PRZEMYSLAW", "ZOCHOWSKI", "POLAND");
         products.forEach(System.out::println);
@@ -102,7 +102,8 @@ ReportsAboutProducts reportsAboutProducts = new ReportsAboutProducts();
 
         System.out.println("asdasdsad");
         List<DataManager> listOfCustomers = reportsAboutCustomer.listOfClientsWhoOrderedAproductFromTheSameCountry();
-        listOfCustomers.forEach(System.out::println);*/
+        listOfCustomers.forEach(System.out::println);
+*/
 
 
 /*        List<Product> list = reportsAboutProducts.getProductsWithMaxPricePerCategory();
@@ -110,23 +111,43 @@ ReportsAboutProducts reportsAboutProducts = new ReportsAboutProducts();
             System.out.println(listItem);
         }*/
 
- /*   Map<String, DataManager> mapa =  reportsAboutProducts.getMostExpensiveProductsForEachCategory();
-      mapa.forEach((k, v) -> System.out.println(k + " ---> " + v));
 
-      List<DataManager> list1 = reportsAboutProducts.getProductsOrderedByCustomerSpecifiedByUser("JAPAN", 25, 45);
+
+ /* ;*/
+
+      /*List<DataManager> list1 = reportsAboutProducts.getProductsOrderedByCustomerSpecifiedByUser("JAPAN", 25, 45);
       list1.forEach(System.out::println);*/
 
 
-// wrocic na spotkaniu
-        /*List<Product> list1 = reportsAboutProducts.getProductsOrderedByCustomerSpecifiedByUser();
-        for (Product listItem : list1){
-            System.out.println(listItem);
-        }*/
+
 
 
   /*  StockService stockService = new StockService();
     stockService.addNewStockItem(DataManager.builder().str1("TILES").str2("WALL MART").str3("UNITED STATES").valInt3(1500).build());*/
 
+
+        // WROCIC NA SPOTKANIU
+
+
+        // serwis - punkt E
+       /* ReportsAboutProducers reportsAboutProducers = new ReportsAboutProducers();*/
+
+        //działa - ale potestować jeszcze
+         //System.out.println(reportsAboutProducers.producersWithAmountofStock("TECHNOLOGY", 200));
+
+        //serwis - punkt F
+/*
+     ReportsAboutCustomerOrders reportsAboutCustomerOrders = new ReportsAboutCustomerOrders();
+        List<CustomerOrder> listOfOrders = reportsAboutCustomerOrders.getTheListOfOrdersFromSpecificPeriodAndAmount(LocalDate.of(2018,11,4), LocalDate.of(2018,11,15), BigDecimal.valueOf(13500));
+        listOfOrders.forEach(System.out::println);*/
+
+        // serwis - punkt H - poprawione, działa
+/*
+        ReportsAboutCustomer reportsAboutCustomer = new ReportsAboutCustomer();
+        reportsAboutCustomer
+                .listOfClientsWhoOrderedAproductFromTheSameCountry()
+                .forEach(System.out::println);*/
     }
 
 }
+

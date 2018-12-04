@@ -50,16 +50,20 @@ public class ClientFlowNewApproach {
                 if (customerVerifiedSuccessfully) {
                     System.out.println("WELCOME " + dataManager.getCustomerName() + " " + dataManager.getCustomerSurname());
                     userDecision();
+                } else if (!customerVerifiedSuccessfully) {
+                    System.out.println("THERE IS NO SUCH CUSTOMER IN THE DATABASE. PLEASE TRY TO LOGIN AGAIN OR SET UP A NEW ACCOUNT");
                 }
                 break;
             case "2":
                 customerDataValidationInTheDB(dataManager);
-                customerService.addCustomerWithCountry(dataManager);
                 customerVerifiedSuccessfully = customerService.isCustomerInCountry(dataManager);
-                if (customerVerifiedSuccessfully) {
+                if (!customerVerifiedSuccessfully) {
+                    customerService.addCustomerWithCountry(dataManager);
                     System.out.println("WELCOME " + dataManager.getCustomerName() + " " + dataManager.getCustomerSurname() + ". YOUR ACCOUNT " +
                             "HAS BEEN SET UP SUCCESSFULLY");
                     userDecision();
+                } else if (customerVerifiedSuccessfully) {
+                    System.out.println("A CUSTOMER WITH THE SAME NAME AND SURNAME HAS BEEN FOUND IN THE GIVEN COUNTRY. PLEASE TRY AGAIN OR LOGIN USING EXISTING ACCOUNT");
                 }
                 break;
         }
@@ -71,11 +75,10 @@ public class ClientFlowNewApproach {
  */
 
 
-
     //-------------------------THIS METHOD INVOKES PLACING AN ORDER (placingAnOrder METHOD from the CustomerOrderService class)-----------------------------
-    private String userDecision (){
+    private String userDecision() {
         String decision = ScannerService.getString("WOULD LIKE TO PLACE AN ORDER? (Y/N)", "(Y|N)");
-        if(decision.toUpperCase().equals("Y")){
+        if (decision.toUpperCase().equals("Y")) {
             List<DataManager> listOfProducts = stockService.presentingTheListOfProductsWithStockAmount();
             listOfProducts.forEach(System.out::println);
             gatheringDataFromTheClientForTheOrder();
@@ -91,15 +94,24 @@ public class ClientFlowNewApproach {
             System.out.println("SELECTED PRODUCT IS NOT AVAILABLE. PLEASE TRY AGAIN");
             gatheringDataFromTheClientForTheOrder();
         } else {
+            // IF MORE THAN ONE SHOP HAS THIS PRODUCT, REQUEST ADDITIONAL INFORMATION
+            if (stockService.checkingIfProductExistsInDifferentShops(dataManager)) {
+                System.out.println("THIS PRODUCT EXIST IN MORE THAN ONE SHOP");
+                dataManager.setShopName(ScannerService.getString("PLEASE PROVIDE THE NAME OF SHOP YOU WANT TO ORDER FROM", "[A-Za-z ]+"));
+            }
             dataManager.setQuantity(ScannerService.getInteger("PLEASE PROVIDE THE AMOUNT OF THE PRODUCT YOU WOULD LIKE TO ORDER"));
-            dataManager.setShopName(ScannerService.getString("PLEASE PROVIDE THE NAME OF SHOP YOU WANT TO ORDER FROM", "[A-Za-z ]+"));
+
+            //IF PRODUCT EXISTS ONLY IN ONE SHOP, GET THE SHOPNAME USING PRODUCT ID
+            dataManager.setShopName(stockService.presentingTheListOfProductsWithStockAmount().stream().
+                    filter(s -> s.getTheIdOfTheSelectedProduct().equals(dataManager.getTheIdOfTheSelectedProduct()))
+                    .findFirst().get().getShopName());
             boolean amountOfStockSufficient = customerOrderService
                     .checkingIfAmountOfProductIsSufficient(dataManager.getTheIdOfTheSelectedProduct(), dataManager.getShopName(), dataManager.getQuantity());
             if (!amountOfStockSufficient) {
                 System.out.println("THERE IS NOT ENOUGH OF SELECTED PRODUCT IN STOCK IN THE GIVEN SHOP. PLEASE TRY AGAIN");
                 gatheringDataFromTheClientForTheOrder();
             } else {
-                dataManager.setPaymentType(ScannerService.getString("TYPE IN THE PAYMENT METHOD OF YOUR CHOICE (CASH, MONEY_TRANSFER, CARD)", "[A-Z]+"));
+                dataManager.setPaymentType(ScannerService.getString("TYPE IN THE PAYMENT METHOD OF YOUR CHOICE (CASH, MONEY_TRANSFER, CARD)", "(CASH|MONEY_TRANSFER|CARD)"));
                 dataManager.setLocalDate(LocalDate.now());
             }
         }
@@ -110,7 +122,7 @@ public class ClientFlowNewApproach {
         dataManager.setCustomerName(ScannerService.getString("PLEASE PROVIDE YOUR NAME:", "[A-Za-z ]+"));
         dataManager.setCustomerSurname(ScannerService.getString("PLEASE PROVIDE YOUR SURNAME:", "[A-Za-z ]+"));
         dataManager.setAge(ScannerService.getInteger("PLEASE PROVIDE YOUR AGE:"));
-        while (dataManager.getAge() <18) {
+        while (dataManager.getAge() < 18) {
             System.out.println("INCORRECT DATA. TO SET UP AN ACCOUNT YOUR AGE HAS TO BE GREATER THAN 18. PLEASE TRY AGAIN");
             dataManager.setAge(ScannerService.getInteger("PLEASE PROVIDE YOUR AGE:"));
         }
@@ -118,8 +130,6 @@ public class ClientFlowNewApproach {
         System.out.println("PLEASE WAIT WHILE WE PROCESS YOUR DATA.");
     }
 
-    private void customerProvidingDataToPlaceAnOrder(){
-        System.out.println("HERE IS A LIST OF PRODUCTS AVAILABLE TO BUY");
-        stockService.presentingTheListOfProductsWithStockAmount();
-    }
+
+
 }

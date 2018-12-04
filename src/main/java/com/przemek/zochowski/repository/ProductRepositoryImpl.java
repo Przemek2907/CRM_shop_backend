@@ -133,4 +133,32 @@ public class ProductRepositoryImpl extends AbstractGenericRepository<Product> im
         }
         return products;
     }
+
+    @Override
+    public boolean hasGuaranteeSet(Long productId, EGuarantee g) {
+        Session session = null;
+        Transaction tx = null;
+
+        try{
+            if (productId == null) {
+                throw new NullPointerException("PRODUCT ID IS NULL");
+            }
+
+            if (g == null) {
+                throw new NullPointerException("GUARANTEE IS NULL");
+            }
+
+            session = getSessionFactory().openSession();
+            tx = session.getTransaction();
+            tx.begin();
+            Product product = session.get(Product.class, productId);
+            if (product != null) {
+                return product.getGuarantees().contains(g);
+            }
+            tx.commit();
+            return false;
+        }catch (Exception e){
+            throw new MyException(ErrorCode.REPOSITORY, e.getMessage());
+        }
+    }
 }

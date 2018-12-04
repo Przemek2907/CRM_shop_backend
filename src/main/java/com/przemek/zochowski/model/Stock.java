@@ -1,9 +1,6 @@
 package com.przemek.zochowski.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -19,11 +16,14 @@ public class Stock {
     @Id
     @GeneratedValue
     private Long id;
-    @Min(value = 0)
     private int quantity;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToOne (cascade = CascadeType.PERSIST)
     @JoinColumn (name = "shop_id")
     private Shop shop;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToOne (cascade = CascadeType.PERSIST)
     @JoinColumn (name = "product_id")
     private Product product;

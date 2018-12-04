@@ -1,51 +1,45 @@
 package com.przemek.zochowski.kmservice;
 
-import com.przemek.zochowski.repository.CustomerOrderRepository;
-import com.przemek.zochowski.repository.CustomerOrderRepositoryImpl;
-import com.przemek.zochowski.repository.StockRepository;
-import com.przemek.zochowski.repository.StockRepositoryImpl;
-import com.przemek.zochowski.service.DataManager;
+import com.przemek.zochowski.dto.ModelMapper;
+import com.przemek.zochowski.dto.ProducerDto;
+import com.przemek.zochowski.model.Stock;
+import com.przemek.zochowski.repository.*;
 
-import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ReportsAboutProducers {
-    CustomerOrderRepository customerOrderRepository = new CustomerOrderRepositoryImpl();
-    StockRepository stockRepository = new StockRepositoryImpl();
+    private CustomerOrderRepository customerOrderRepository = new CustomerOrderRepositoryImpl();
+    private StockRepository stockRepository = new StockRepositoryImpl();
+    private ModelMapper modelMapper = new ModelMapper();
+    private ProducerRepository producerRepository = new ProducerRepositoryImpl();
 
 
-    // WROCIC DO PODPUNKTU E Z WARSTWY SERWISOWEJ
+    // WROCIC DO PODPUNKTU e Z WARSTWY SERWISOWEJ
+
+    // ZEBY TO ZROBIC POTRZBUJĘ:
+    //METODY LICZACEJ ilosc produktow per producer_id (tabela product i stock) - mam metodę w StockRepoImpl
 
 
-/*
-    public List<DataManager> listOfProducers (String industryName, int quantity){
-        return customerOrderRepository.findAll()
+   /* Pobranie z bazy danych producentów o nazwie branży podanej przez użytkownika,
+    którzy wyprodukowali produkty o łącznej ilości sztuk większej niż liczba podana przez użytkownika.*/
+    public List<Map.Entry<ProducerDto, Integer>> producersWithAmountofStock (String industryName, int thresholdAmount){
+       return stockRepository
+                .findAll()
                 .stream()
-                .filter(p -> p.getProduct().getProducer().getTrade().getIndustry().equals(industryName))
-                .map( p -> DataManager.builder()
-                        .producerName(p.getProduct().getProducer().getName())
-                        .quantity(p.getQuantity())
-                        .build())
-                .collect(Collectors.toList())
-                .stream()
-                .collect(Collectors.groupingBy( c->c, Collectors.counting()))
+                .filter(s -> s.getProduct().getProducer().getTrade().getIndustry().equals(industryName))
+                .collect(Collectors.groupingBy(s -> s.getProduct().getProducer()))
                 .entrySet()
                 .stream()
-                .sorted((e1, e2) -> Long.compare(e2.getValue(), e1.getValue()))
-                .filter(s -> s.getValue() > Long.valueOf(quantity))
                 .collect(Collectors.toMap(
-                        e -> e.getKey(),
-                        e -> e.getValue(),
-                        (v1, v2) -> v1,
-                        () -> new LinkedHashMap<>()
-                ));
+                        e -> modelMapper.fromProducerToProducerDto(e.getKey()),
+                        e -> e.getValue().stream().map(Stock::getQuantity).reduce(0, Integer::sum)
+                ))
+                .entrySet()
+                .stream()
+                .filter(e -> e.getValue() > thresholdAmount)
+               .collect(Collectors.toList());
     }
 
-
-    private int totalQuantityOfProduct(int marginQuantity) {
-        return stockRepository.findAll()
-                .stream()
-
-    }*/
 }

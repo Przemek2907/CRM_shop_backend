@@ -86,7 +86,9 @@ public abstract class AbstractGenericRepository<T> implements GenericRepository<
         } catch (Exception e) {
             throw new MyException(ErrorCode.REPOSITORY, e.getMessage());
         }finally {
-            session.close();
+            if (session != null) {
+                session.close();
+            }
         }
     }
 
@@ -105,11 +107,11 @@ public abstract class AbstractGenericRepository<T> implements GenericRepository<
         }catch (Exception e){
             throw new MyException(ErrorCode.REPOSITORY, e.getMessage());
         }
-        // SECTION COMMENTED OUT, OTHERWISE IT DROPS THE DB CONNECTION WHEN I USE IT IN CLIENT CONTROL FLOW CLASS IN METHOD validationIfRequestedAmountIsInStock
-        // WHILE CREATING PRODUCT DTO
-      /*  finally {
-            session.close();
-        }*/
+        finally {
+            if (session != null) {
+                session.close();
+            }
+        }
         return optionalObject;
     }
 
@@ -130,11 +132,11 @@ public abstract class AbstractGenericRepository<T> implements GenericRepository<
         } catch (Exception e) {
             e.printStackTrace();
             throw new MyException(ErrorCode.REPOSITORY, e.getMessage());
-        } /*finally {
+        } finally {
             if (session != null) {
                 session.close();
             }
-        }*/
+        }
         return items;
     }
 

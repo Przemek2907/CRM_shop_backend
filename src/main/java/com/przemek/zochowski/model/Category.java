@@ -1,10 +1,7 @@
 package com.przemek.zochowski.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -21,6 +18,8 @@ public class Category {
     @GeneratedValue
     private Long id;
     private String name;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "category")
     private Set<Product> products;
 

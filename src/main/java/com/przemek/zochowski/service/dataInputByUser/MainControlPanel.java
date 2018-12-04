@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class MainControlPanel {
 
     ClientFlowNewApproach clientFlowNewApproach = new ClientFlowNewApproach();
+    AdminControlFlow adminControlFlow = new AdminControlFlow();
     ErrorService errorService = new ErrorService();
     private static final String table1 = "KLIENT";
     private static final String table2 = "SHOP";
@@ -26,7 +27,7 @@ public class MainControlPanel {
             try {
                 String choice1 = ScannerService.getString("CHOOSE ONE OPTION:\n 1 - SYSTEM ADMIN \n 2 - CLIENT", "(1|2)");
                 if (choice1.trim().equals("SYSTEM ADMIN") || choice1.trim().equals("1")) {
-                    // INCLUDE HERE THE PART OF ADMIN APPLICATION
+                    adminControlFlow.adminFlowOfApplication();
                 } else if (choice1.trim().equals("CLIENT") || choice1.trim().equals("2")) {
                     clientFlowNewApproach.clientFlowOfApplication();
                 }

@@ -40,4 +40,25 @@ public class ProducerRepositoryImpl extends AbstractGenericRepository<Producer> 
         }
         return optionalProducer;
     }
+
+    @Override
+    public int numberOfProductsProducedBy(long producerId) {
+
+        Session session = null;
+        Transaction tx = null;
+        int number = 0;
+        try {
+            session = getSessionFactory().openSession();
+            tx = session.getTransaction();
+            tx.begin();
+            number = session.get(Producer.class, producerId)
+                    .getProducts()
+                    .size();
+            tx.commit();
+            System.out.println("------->" + number);
+        }catch (Exception e){
+            throw new MyException(ErrorCode.REPOSITORY, e.getMessage());
+        }
+        return number;
+    }
 }

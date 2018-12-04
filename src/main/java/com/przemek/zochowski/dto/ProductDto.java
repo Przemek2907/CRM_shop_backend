@@ -5,6 +5,7 @@ package com.przemek.zochowski.dto;
 import com.przemek.zochowski.exceptions.ErrorCode;
 import com.przemek.zochowski.exceptions.MyException;
 import com.przemek.zochowski.model.EGuarantee;
+import lombok.Data;
 
 
 import javax.validation.constraints.Null;
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Set;
 
-
+@Data
 public class ProductDto {
 
     private Long id;
@@ -36,7 +37,7 @@ public class ProductDto {
         return new ProductDtoBuilder();
     }
 
-    public Long getId() {
+   /* public Long getId() {
         return id;
     }
 
@@ -100,7 +101,7 @@ public class ProductDto {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, price, producerDto, categoryDto, guarantees);
-    }
+    }*/
 
     public static class ProductDtoBuilder {
         private Long id;

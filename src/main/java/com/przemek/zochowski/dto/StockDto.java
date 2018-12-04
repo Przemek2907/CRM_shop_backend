@@ -3,10 +3,13 @@ package com.przemek.zochowski.dto;
 
 import com.przemek.zochowski.exceptions.ErrorCode;
 import com.przemek.zochowski.exceptions.MyException;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+
+@Data
 public class StockDto {
 
     private Long id;
@@ -26,7 +29,7 @@ public class StockDto {
     }
 
 
-    public Long getId() {
+    /*public Long getId() {
         return id;
     }
 
@@ -72,7 +75,7 @@ public class StockDto {
     @Override
     public int hashCode() {
         return Objects.hash(id, quantity, shopDto, productDto);
-    }
+    }*/
 
     public static class StockDtoBuilder {
         private Long id;

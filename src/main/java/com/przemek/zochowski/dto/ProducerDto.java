@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-
+@Data
 public class ProducerDto {
 
     private Long id;
@@ -28,54 +28,6 @@ public class ProducerDto {
 
     public static ProducerBuilderDto builder () {
         return new ProducerBuilderDto();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public CountryDto getCountryDto() {
-        return countryDto;
-    }
-
-    public void setCountryDto(CountryDto countryDto) {
-        this.countryDto = countryDto;
-    }
-
-    public TradeDto getTradeDto() {
-        return tradeDto;
-    }
-
-    public void setTradeDto(TradeDto tradeDto) {
-        this.tradeDto = tradeDto;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ProducerDto that = (ProducerDto) o;
-        return Objects.equals(id, that.id) &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(countryDto, that.countryDto) &&
-                Objects.equals(tradeDto, that.tradeDto);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, countryDto, tradeDto);
     }
 
     public static class ProducerBuilderDto {

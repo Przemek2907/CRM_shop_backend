@@ -7,4 +7,5 @@ import java.util.Optional;
 
 public interface ProducerRepository extends GenericRepository<Producer> {
     Optional<Producer> findByName (String name);
+    int numberOfProductsProducedBy(long producerId);
 }

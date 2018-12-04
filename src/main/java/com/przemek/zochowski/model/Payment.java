@@ -1,10 +1,7 @@
 package com.przemek.zochowski.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -22,6 +19,8 @@ public class Payment {
     private Long id;
     @Enumerated(EnumType.STRING)
     private EPayment payment;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany (cascade = CascadeType.PERSIST, mappedBy = "payment")
     private Set<CustomerOrder> customerOrders;
 

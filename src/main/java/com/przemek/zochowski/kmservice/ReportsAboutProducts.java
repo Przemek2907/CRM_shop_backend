@@ -36,31 +36,6 @@ public class ReportsAboutProducts {
     /* THIS METHOD CONNECTS TO THE DATABASE AND COLLECTS THE DATA FROM 4 TABLES, DEPICTING THE NAME, PRODUCER, AND THE PRICE OF THE MOST EXPENSIVE PRODUCT IN EACH CATEGORY
        ALONG WITH THE TOTAL AMOUNT OF ORDERS PLACED FOR SUCH PRODUCT AND THE TOTAL QUANTITY OF THOSE ORDERS. THE DATA IS THEN TRANSFERRED TO AN ARRAY LIST FOR FURTHER USE*/
 
-
-    // PO ZROBIENIU METODY toString TAK, ZEBY NIE WYWALALA NULLI, METODY KRZYSKA SA OK I MOZNA TO WYRZUCIC
-/*    public List<Product> getProductsWithMaxPricePerCategory() {
-
-        try {
-            productsWithMaxPricePerCategory = productRepository.findAll()
-                    .stream()
-                    .sorted(Comparator.comparing(Product::getPrice, Comparator.reverseOrder()))
-                    .filter(distinctByKey(Product::getCategory))
-                    .collect(Collectors.toList());
-
-        } catch (Exception e) {
-            System.out.println("OOOPS, STH WENT WRONG");
-        }
-
-        return productsWithMaxPricePerCategory;
-    }*/
-
-
-    private static <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
-        Set<Object> seen = ConcurrentHashMap.newKeySet();
-        return t -> seen.add(keyExtractor.apply(t));
-    }
-
-
     //DO ANALIZY NA SPOTKANIU
     public List<DataManager> getProductsOrderedByCustomerSpecifiedByUser (String countryName, int age_min, int age_max) {
             return customerOrderRepository
@@ -117,10 +92,10 @@ public class ReportsAboutProducts {
 
 
     //LIST OF PRODUCTS, WHICH HAVE WARRANTY INCLUDED OF A TYPE PROVIDED BY A USER
-    public List<Product> getProductWithWarranty (String guaranteeType1, String guaranteeType2){
+    public List<Product> getProductWithWarranty (EGuarantee guarantee){
         return productRepository.findAll()
                 .stream()
-                .filter(p->p.getGuarantees().contains(EGuarantee.valueOf(guaranteeType1)) || p.getGuarantees().contains(EGuarantee.valueOf(guaranteeType2)))
+                .filter(p->productRepository.hasGuaranteeSet(p.getId(), guarantee))
                 .collect(Collectors.toList());
     }
 
@@ -136,6 +111,4 @@ public class ReportsAboutProducts {
                             .build())
                 .collect(Collectors.toList());
     }
-
-
 }

@@ -1,9 +1,6 @@
 package com.przemek.zochowski.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -20,19 +17,24 @@ public class Producer {
     @Id
     @GeneratedValue
     private Long id;
-    @Pattern(regexp = "([A-Z]+\\s*)*")
     private String name;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToOne (cascade = CascadeType.PERSIST)
     @JoinColumn (name = "country_id")
     private Country country;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToOne (cascade = CascadeType.PERSIST)
     @JoinColumn (name = "trade_id")
     private Trade trade;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany (cascade = CascadeType.PERSIST, mappedBy = "producer")
     private Set<Product> products;
 
 
-    @Override
+  /*  @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -47,8 +49,8 @@ public class Producer {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name,products);
-    }
+        return Objects.hash(id, name)//products);
+    }*/
 
 
     @Override

@@ -9,9 +9,7 @@ import com.przemek.zochowski.repository.*;
 import com.przemek.zochowski.service.DataManager;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class StockService {
@@ -91,13 +89,15 @@ public class StockService {
                         .price(stock.getProduct().getPrice())
                         .build())
                 .collect(Collectors.toList());
-
-     /*   for (int i = 0; i<listOfItemsInStock.size(); i++){
-            System.out.println(listOfItemsInStock.get(i).getTheIdOfTheSelectedProduct() + ". PRODUCT: " + listOfItemsInStock.get(i).getProductName()
-                    + ", PRICE:" + listOfItemsInStock.get(i).getPrice() + " EURO"
-                    + ". SHOP IN WHICH THE PRODUCT IS AVAILABLE: " + listOfItemsInStock.get(i).getShopName()
-                    + ". STOCK AVAILABLE: " + listOfItemsInStock.get(i).getQuantity());
-        }*/
         return listOfItemsInStock;
+    }
+
+    public boolean checkingIfProductExistsInDifferentShops (DataManager dataManager){
+        long productsInStockStats = stockRepository.findAll()
+                .stream()
+                .filter(stock -> stock.getProduct().getId().equals(dataManager.getTheIdOfTheSelectedProduct()))
+                .count();
+
+        return productsInStockStats > 1 ? true : false;
     }
 }

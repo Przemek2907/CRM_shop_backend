@@ -12,7 +12,7 @@ public class ErrorService {
     public void addError(MyException e) {
         errorsRepository.addOrUpdate(Errors.builder()
                 .errorCode(e.getErrorCode())
-                .message(e.getErrorMessage())
+                .message(e.getErrorMessage() == null ? "NULL" : e.getMessage())
                 .dateTime(e.getErrorDateTime())
                 .build());
     }

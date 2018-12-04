@@ -9,12 +9,9 @@ import com.przemek.zochowski.repository.*;
 import com.przemek.zochowski.service.DataManager;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.Optional;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 public class CustomerOrderService {
@@ -83,7 +80,10 @@ public class CustomerOrderService {
                 System.out.println("YOUR ORDER SUMMARY: " + product.getName() + ". AMOUNT OF ORDERED ITEMS: " + customerOrder.getQuantity()
                         + ". PRICE PER ITEM: " + product.getPrice() + " EURO. DISCOUNT GRANTED: " + customerOrder.getDiscount()
                         + ". TO PAY: " + priceToPay + " EURO. CHOSEN PAYMENT METHOD: " + customerOrder.getPayment().getPayment().name());
+
+                System.out.println("THANK YOU FOR USING OUR SERVICES");
             }
+
         } catch (Exception e) {
             e.printStackTrace();
             throw new MyException(ErrorCode.SERVICE, e.getMessage());
@@ -103,7 +103,7 @@ public class CustomerOrderService {
                 System.out.println("THE REQUESTED AMOUNT EXCEEDS THE CURRENT AMOUNT IN STOCK. PLEASE TRY AGAIN");
             } else {
                 deductingTheRequestedAmountFromStock(productId, shopName, requestedAmount);
-                System.out.println("YOU ORDER HAS BEEN ACCEPTED");
+                System.out.println("YOU ORDER HAS BEEN ACCEPTED" );
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -136,7 +136,7 @@ public class CustomerOrderService {
     private Map<Long, Integer> selectedProductAndAmountInStock(Long selectedProductId, String shopName) {
         Map<Long, Integer> productInStock = stockService.presentingTheListOfProductsWithStockAmount().stream()
                 .filter(s -> s.getTheIdOfTheSelectedProduct().equals(selectedProductId))
-                .filter(s -> s.getShopName().equals(shopName))
+                .filter(s -> s.getShopName().equals(shopName) )
                 .collect(Collectors.toMap(s -> s.getTheIdOfTheSelectedProduct(), s -> s.getQuantity())
                 );
 

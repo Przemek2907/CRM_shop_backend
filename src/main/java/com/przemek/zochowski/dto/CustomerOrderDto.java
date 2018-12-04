@@ -4,6 +4,7 @@ package com.przemek.zochowski.dto;
 
 import com.przemek.zochowski.exceptions.ErrorCode;
 import com.przemek.zochowski.exceptions.MyException;
+import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -13,7 +14,7 @@ import java.util.zip.DataFormatException;
 
 import static java.lang.String.format;
 
-
+@Data
 public class CustomerOrderDto {
 
     private Long id;
@@ -39,7 +40,7 @@ public class CustomerOrderDto {
     }
 
 
-    public Long getId() {
+  /*  public Long getId() {
         return id;
     }
 
@@ -112,7 +113,7 @@ public class CustomerOrderDto {
     @Override
     public int hashCode() {
         return Objects.hash(id, date, quantity, discount, customerDto, paymentDto, productDto);
-    }
+    }*/
 
     public static class CustomerOrderDtoBuilder {
         private Long id;
