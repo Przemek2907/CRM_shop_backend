@@ -1,0 +1,37 @@
+{
+  "countriesDto": [
+    {
+      "name": "ARGENTINA"
+    },
+    {
+      "name": "POLAND"
+    },
+    {
+      "name": "GERMANY"
+    },
+    {
+      "name": "FRANCE"
+    },
+    {
+      "name": "UNITED STATES"
+    },
+    {
+      "name": "SWEDEN"
+    },
+    {
+      "name": "JAPAN"
+    },
+    {
+      "name": "PORTUGAL"
+    },
+    {
+      "name": "NORWAY"
+    },
+    {
+      "name": "GHANA"
+    },
+    {
+      "name": "TURKEY"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "customersDto": [
+    {
+      "name": "ADAM",
+      "surname": "KOWALSKI",
+      "age": 24,
+      "countryDto": {"name": "POLAND"}
+    },
+    {
+      "name": "THOMAS",
+      "surname": "SCHMIDT",
+      "age": 36,
+      "countryDto": {"name": "GERMANY"}
+    },
+    {
+      "name": "JAVIER",
+      "surname": "BABTISTA",
+      "age": 21,
+      "countryDto": {"name": "ARGENTINA"}
+    },
+    {
+      "name": "KIERAN",
+      "surname": "WOODS",
+      "age": 37,
+      "countryDto": {"name": "UNITED STATES"}
+    },
+    {
+      "name": "ASPEN",
+      "surname": "JEDGAR",
+      "age": 19,
+      "countryDto": {"name": "SWEDEN"}
+    },
+    {
+      "name": "HITARO",
+      "surname": "OONOKI",
+      "age": 29,
+      "countryDto": {"name": "JAPAN"}
+    },
+    {
+      "name": "DANNY",
+      "surname": "DEVITO",
+      "age": 42,
+      "countryDto": {"name": "GHANA"}
+    },
+    {
+      "name": "RICH",
+      "surname": "GUY",
+      "age": 45,
+      "countryDto": {"name": "FRANCE"}
+    }
+  ]
+}

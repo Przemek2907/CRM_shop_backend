@@ -1,0 +1,1341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="91dfc96a-7d43-44d4-9adc-70227e1b1a85" name="Default Changelist" comment="project developed and service layer finished, last step almost done, user menu is 95% completed">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/DataInitializeFromFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/DataInitializerFromFileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/Filenames.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputByUser/MainControlPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45c4584a-42be-4aea-9b7e-cb9ff97de6a3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/45c4584a-42be-4aea-9b7e-cb9ff97de6a3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/dto/CategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/dto/CategoryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/dto/TradeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/dto/TradeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/kmservice/CustomerOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/entityService/CustomerOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/kmservice/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/entityService/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/kmservice/ProducerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/kmservice/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/entityService/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/kmservice/ReportsAboutCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/entityService/ReportsAboutCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/kmservice/ReportsAboutCustomerOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/entityService/ReportsAboutCustomerOrders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/kmservice/ReportsAboutProducers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/entityService/ReportsAboutProducers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/kmservice/ReportsAboutProducts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/kmservice/ReportsAboutShops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/entityService/ReportsAboutShops.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/kmservice/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/entityService/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/kmservice/StockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/entityService/StockService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/CategoryRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/CategoryRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/CountryRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/CountryRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/CustomerRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/CustomerRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/PaymentRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/PaymentRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ProducerRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ProducerRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ProductRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ProductRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ShopRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ShopRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/StockRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/StockRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/StockRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/StockRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/TradeRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/TradeRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/generic/AbstractGenericRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/generic/AbstractGenericRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/generic/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/generic/DbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputByUser/DataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/ScannerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputByUser/ScannerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/businessLogic/ShopServiceLayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataFromFile/CategoryDtoParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataFromFile/CountryDtoParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataFromFile/CustomerDtoParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataFromFile/CustomerOrderDtoParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataFromFile/DataInitializeFromFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataFromFile/DataInitializerFromFileService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataFromFile/Filenames.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataFromFile/Parser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataFromFile/ProducerDtoParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataFromFile/ProductDtoParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataFromFile/ShopDtoParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataFromFile/StockDtoParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataFromFile/TradeDtoParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataInputByUser/AdminControlFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputByUser/AdminControlFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataInputByUser/ClientFlowNewApproach.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputByUser/ClientFlowNewApproach.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataInputByUser/MainControlPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/errors/ErrorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="per01: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1227357608">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="64" />
+          <entry key="project.open.time.0" value="3" />
+          <entry key="project.open.time.1" value="7" />
+          <entry key="project.open.time.10" value="5" />
+          <entry key="project.open.time.11" value="4" />
+          <entry key="project.open.time.12" value="5" />
+          <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.15" value="2" />
+          <entry key="project.open.time.2" value="13" />
+          <entry key="project.open.time.3" value="3" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.7" value="9" />
+          <entry key="project.open.time.8" value="4" />
+          <entry key="project.open.time.9" value="8" />
+          <entry key="project.opened" value="68" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="GUARANTEE_COMPONENTS" value="1" />
+          <entry key="TXT" value="98" />
+          <entry key="category" value="29" />
+          <entry key="country" value="32" />
+          <entry key="customer" value="35" />
+          <entry key="customerorder" value="37" />
+          <entry key="errors" value="33" />
+          <entry key="guarantee_components" value="34" />
+          <entry key="hibernate_sequence" value="14" />
+          <entry key="hql" value="1" />
+          <entry key="java" value="848" />
+          <entry key="payment" value="24" />
+          <entry key="producer" value="29" />
+          <entry key="product" value="47" />
+          <entry key="shop" value="23" />
+          <entry key="stock" value="28" />
+          <entry key="trade" value="23" />
+          <entry key="xml" value="14" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Database Element" value="388" />
+          <entry key="Hibernate QL" value="1" />
+          <entry key="JAVA" value="848" />
+          <entry key="PLAIN_TEXT" value="99" />
+          <entry key="XML" value="14" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="TXT" value="2045" />
+          <entry key="dummy" value="68" />
+          <entry key="java" value="70546" />
+          <entry key="regexp" value="15" />
+          <entry key="sql" value="4" />
+          <entry key="xml" value="203" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="70515" />
+          <entry key="JPA QL" value="31" />
+          <entry key="PLAIN_TEXT" value="2113" />
+          <entry key="RegExp" value="15" />
+          <entry key="SQL" value="4" />
+          <entry key="XML" value="203" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="1159439072">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="24" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="4" />
+          <entry key="project.open.time.11" value="3" />
+          <entry key="project.open.time.12" value="4" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.3" value="4" />
+          <entry key="project.open.time.59" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="4" />
+          <entry key="project.opened" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="17" />
+          <entry key="java" value="17594" />
+          <entry key="txt" value="121" />
+          <entry key="xml" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="17591" />
+          <entry key="JPA QL" value="3" />
+          <entry key="PLAIN_TEXT" value="138" />
+          <entry key="XML" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="category" value="1" />
+          <entry key="country" value="4" />
+          <entry key="customer" value="8" />
+          <entry key="customerorder" value="12" />
+          <entry key="errors" value="15" />
+          <entry key="guarantee_components" value="3" />
+          <entry key="java" value="263" />
+          <entry key="payment" value="1" />
+          <entry key="producer" value="6" />
+          <entry key="product" value="13" />
+          <entry key="shop" value="4" />
+          <entry key="stock" value="15" />
+          <entry key="trade" value="3" />
+          <entry key="xml" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Database Element" value="85" />
+          <entry key="JAVA" value="263" />
+          <entry key="XML" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-1783764884">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="22" />
+          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.11" value="4" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.19" value="3" />
+          <entry key="project.open.time.2" value="6" />
+          <entry key="project.open.time.3" value="4" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="JSON" value="3" />
+          <entry key="TXT" value="20" />
+          <entry key="category" value="23" />
+          <entry key="country" value="22" />
+          <entry key="customer" value="18" />
+          <entry key="customerorder" value="18" />
+          <entry key="errors" value="10" />
+          <entry key="guarantee_components" value="10" />
+          <entry key="hibernate_sequence" value="3" />
+          <entry key="java" value="471" />
+          <entry key="json" value="103" />
+          <entry key="payment" value="9" />
+          <entry key="producer" value="12" />
+          <entry key="product" value="14" />
+          <entry key="properties" value="2" />
+          <entry key="shop" value="14" />
+          <entry key="stock" value="17" />
+          <entry key="trade" value="10" />
+          <entry key="xml" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Database Element" value="180" />
+          <entry key="Enforced Plain Text" value="1" />
+          <entry key="JAVA" value="471" />
+          <entry key="JSON" value="106" />
+          <entry key="PLAIN_TEXT" value="20" />
+          <entry key="Properties" value="1" />
+          <entry key="XML" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="JSON" value="69" />
+          <entry key="java" value="14759" />
+          <entry key="json" value="2967" />
+          <entry key="properties" value="2" />
+          <entry key="xml" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="14758" />
+          <entry key="JPA QL" value="1" />
+          <entry key="JSON" value="3036" />
+          <entry key="Properties" value="2" />
+          <entry key="XML" value="13" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://45c4584a-42be-4aea-9b7e-cb9ff97de6a3/schema/per01/table/stock">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ProductRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="41" selection-start-column="41" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://45c4584a-42be-4aea-9b7e-cb9ff97de6a3/schema/per01/table/customerorder">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/customer_order.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/model/CustomerOrder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/entityService/CustomerOrderService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1392">
+              <caret line="99" column="77" selection-start-line="99" selection-start-column="77" selection-end-line="99" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/generic/AbstractGenericRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1424">
+              <caret line="100" selection-start-line="100" selection-end-line="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>category</find>
+      <find>CategoryDto</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>country</replace>
+      <replace>CountryDto</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/CountryRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/CustomerRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataInputFromJSON/converters/JsonConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataFromFile/DataInitializeFromFile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/service/dataInputFromJSON/CategoryJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/pzservice/ProducerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/pzservice/entityServices/ProducerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/pzservice/entityServices/ShopService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/pzservice/entityServices/entityServie/ShopService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/pzservice/entityServices/entityService/ShopService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputByUser/ScannerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/generic/AbstractGenericRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/CategoryRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/country.json" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputFromJSON/CountryJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputFromJSON/TradeJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputFromJSON/CustomerJson.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/trade.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/producer.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputFromJSON/ProducerJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputFromJSON/ShopJson.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/shop.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputFromJSON/CategoryJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputFromJSON/ProductJson.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/category.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/product.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/dto/ProductDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputFromJSON/StockJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/dto/CustomerOrderDto.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/customer.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/stock.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/StockRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/entityService/CustomerOrderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/model/Dates.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputFromJSON/converters/DatesJsonConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputFromJSON/converters/JsonConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputFromJSON/CustomerOrderJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/DataInitializerFromFileService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/DataInitializeFromFile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputByUser/AdminControlFlow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ProductRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ProductRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ShopRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/CustomerOrderJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/StockRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/customer_order.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/przemek/zochowski/App.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Hibernate project - CRM system" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1878" />
+    <option name="y" value="61" />
+    <option name="width" value="2064" />
+    <option name="height" value="1168" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>JPA</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>JpaAttributeTypeInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zochowski" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zochowski" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zochowski" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zochowski" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zochowski" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zochowski" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="generic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zochowski" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zochowski" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="dataFromFile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zochowski" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="dataFromFile" type="462c0819:PsiDirectoryNode" />
+              <item name="converters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zochowski" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="dataInputByUser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zochowski" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="entityService" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CRM - JPA + JSON" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM - JPA + JSON" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549491637608" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last.edited.regexp" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../21_JPA" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Lombok Config" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Przemek - nauka programowania\Programowanie Java - lekcje KM\Projekty na GITHub-a\Projekt sklep -JPA+JSON\CRM - JPA + JSON\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.przemek.zochowski.service.dataInputFromJSON" />
+      <recent name="com.przemek.zochowski.kmservice" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Przemek - nauka programowania\Programowanie Java - lekcje KM\Projekty na GITHub-a\Projekt sklep -JPA+JSON\CRM - JPA + JSON\src\main\resources\META-INF" />
+      <recent name="C:\Users\DELL\Przemek\Programowanie\Projekty na GITHub-a\Projekt sklep -Hibernate+JPQL\HibernateprojectCRMsystem\src\main\java\com\przemek\zochowski\model" />
+      <recent name="C:\Users\DELL\Przemek\Programowanie\Projekty na GITHub-a\Projekt sklep -Hibernate+JPQL\HibernateprojectCRMsystem\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="8.0" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.przemek.zochowski.App" />
+      <module name="CRM - JPA + JSON" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.przemek.zochowski.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="91dfc96a-7d43-44d4-9adc-70227e1b1a85" name="Default Changelist" comment="" />
+      <created>1536255597548</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1536255597548</updated>
+      <workItem from="1536255603695" duration="14841000" />
+      <workItem from="1536611109002" duration="1423000" />
+      <workItem from="1536694544039" duration="1227000" />
+      <workItem from="1536870552991" duration="4163000" />
+      <workItem from="1537008720008" duration="4436000" />
+      <workItem from="1537017078813" duration="3791000" />
+      <workItem from="1537025651418" duration="1783000" />
+      <workItem from="1537033295672" duration="797000" />
+      <workItem from="1537084451670" duration="6352000" />
+      <workItem from="1537094211433" duration="2286000" />
+      <workItem from="1537135724974" duration="454000" />
+      <workItem from="1537219791061" duration="3152000" />
+      <workItem from="1537288735305" duration="6999000" />
+      <workItem from="1537304407933" duration="2424000" />
+      <workItem from="1537375821933" duration="9576000" />
+      <workItem from="1537459386220" duration="262000" />
+      <workItem from="1537624969196" duration="591000" />
+      <workItem from="1537854686545" duration="2053000" />
+      <workItem from="1537892956877" duration="6247000" />
+      <workItem from="1537976574612" duration="833000" />
+      <workItem from="1538063174710" duration="593000" />
+      <workItem from="1538155032717" duration="6464000" />
+      <workItem from="1538171208954" duration="595000" />
+      <workItem from="1538421494538" duration="4289000" />
+      <workItem from="1538502359807" duration="1862000" />
+      <workItem from="1538725177943" duration="10921000" />
+      <workItem from="1538762339306" duration="7535000" />
+      <workItem from="1538816597998" duration="10528000" />
+      <workItem from="1538842109073" duration="11873000" />
+      <workItem from="1538906591565" duration="3863000" />
+      <workItem from="1538915657858" duration="39000" />
+      <workItem from="1538923156894" duration="4544000" />
+      <workItem from="1539106827061" duration="2682000" />
+      <workItem from="1539111103063" duration="3866000" />
+      <workItem from="1539199360496" duration="594000" />
+      <workItem from="1539712873590" duration="13000" />
+      <workItem from="1539714336336" duration="629000" />
+      <workItem from="1539715009390" duration="9000" />
+      <workItem from="1540241141410" duration="2387000" />
+      <workItem from="1540271829870" duration="3126000" />
+      <workItem from="1540313485400" duration="4540000" />
+      <workItem from="1540483461260" duration="198000" />
+      <workItem from="1540814850491" duration="1056000" />
+      <workItem from="1540834055123" duration="1212000" />
+      <workItem from="1540853182811" duration="1545000" />
+      <workItem from="1540898719818" duration="2818000" />
+      <workItem from="1540908890725" duration="17275000" />
+      <workItem from="1540939914433" duration="2408000" />
+      <workItem from="1540977261917" duration="886000" />
+      <workItem from="1540986424508" duration="22058000" />
+      <workItem from="1541014417959" duration="6631000" />
+      <workItem from="1541073057335" duration="11721000" />
+      <workItem from="1541099353761" duration="6074000" />
+      <workItem from="1541156529112" duration="33937000" />
+      <workItem from="1541203770587" duration="2869000" />
+      <workItem from="1541206793414" duration="2571000" />
+      <workItem from="1541249682436" duration="34551000" />
+      <workItem from="1541331494023" duration="20621000" />
+      <workItem from="1541417784886" duration="22655000" />
+      <workItem from="1541495947341" duration="9182000" />
+      <workItem from="1541521180932" duration="8625000" />
+      <workItem from="1541584403962" duration="24889000" />
+      <workItem from="1541671240439" duration="30231000" />
+      <workItem from="1541757131968" duration="17592000" />
+      <workItem from="1541801077798" duration="1523000" />
+      <workItem from="1541847142866" duration="10916000" />
+      <workItem from="1541935265082" duration="9534000" />
+      <workItem from="1542113700295" duration="24277000" />
+      <workItem from="1542202375300" duration="85000" />
+      <workItem from="1542218251834" duration="14137000" />
+      <workItem from="1542276819646" duration="16402000" />
+      <workItem from="1542362620099" duration="23161000" />
+      <workItem from="1542548316424" duration="6384000" />
+      <workItem from="1542563819576" duration="9542000" />
+      <workItem from="1542663527958" duration="7792000" />
+      <workItem from="1542733468177" duration="13483000" />
+      <workItem from="1543185251690" duration="1375000" />
+      <workItem from="1543337015658" duration="11067000" />
+      <workItem from="1543557955306" duration="2739000" />
+      <workItem from="1543868831715" duration="4921000" />
+      <workItem from="1543947415660" duration="11725000" />
+      <workItem from="1544131506429" duration="4258000" />
+      <workItem from="1544139076453" duration="69000" />
+      <workItem from="1544139435035" duration="989000" />
+      <workItem from="1544552345324" duration="434000" />
+      <workItem from="1544552822705" duration="594000" />
+      <workItem from="1544554497555" duration="20000" />
+      <workItem from="1545573964717" duration="1164000" />
+      <workItem from="1545587824380" duration="19000" />
+      <workItem from="1545832573732" duration="367000" />
+      <workItem from="1546385172431" duration="1872000" />
+      <workItem from="1546975061261" duration="751000" />
+      <workItem from="1547012726902" duration="1513000" />
+      <workItem from="1547497145088" duration="7616000" />
+      <workItem from="1547581504948" duration="2200000" />
+      <workItem from="1547896043743" duration="3324000" />
+      <workItem from="1548014761761" duration="12429000" />
+      <workItem from="1548103565041" duration="4284000" />
+      <workItem from="1548110201055" duration="498000" />
+      <workItem from="1548183785735" duration="4520000" />
+      <workItem from="1548355247025" duration="91000" />
+      <workItem from="1548367764210" duration="4625000" />
+      <workItem from="1548663417291" duration="1209000" />
+      <workItem from="1548707428118" duration="3309000" />
+      <workItem from="1548742212313" duration="1320000" />
+      <workItem from="1548786423140" duration="2889000" />
+      <workItem from="1548795608450" duration="7379000" />
+      <workItem from="1548873150016" duration="10850000" />
+      <workItem from="1549106417890" duration="3658000" />
+      <workItem from="1549178535405" duration="31494000" />
+      <workItem from="1549307649616" duration="29000" />
+      <workItem from="1549308376330" duration="342000" />
+      <workItem from="1549392392492" duration="2243000" />
+      <workItem from="1549398054501" duration="2900000" />
+      <workItem from="1549428488802" duration="1161000" />
+      <workItem from="1549491162264" duration="601000" />
+    </task>
+    <task id="LOCAL-00001" summary="project developed and service layer finished, last step almost done, user menu is 95% completed">
+      <created>1543966739325</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1543966739325</updated>
+    </task>
+    <task id="LOCAL-00002" summary="project developed and service layer finished, last step almost done, user menu is 95% completed">
+      <created>1544135308877</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1544135308877</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="726331000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="2064" height="1168" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21240234" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Persistence" order="2" side_tool="true" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32910052" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.13113007" weight="0.37460318" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39924315" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.86886996" side_tool="true" weight="0.34994584" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.2899471" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32261115" />
+      <window_info anchor="bottom" id="Database Console" order="12" weight="0.32936078" />
+      <window_info anchor="bottom" id="Database Changes" order="13" weight="0.32936078" />
+      <window_info anchor="bottom" id="Hibernate Console" order="14" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32995737" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.122558594" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32995737" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17643923" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Persistence" order="2" side_tool="true" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32936078" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32995737" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.20788912" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32995737" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="project developed and service layer finished, last step almost done, user menu is 95% completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="project developed and service layer finished, last step almost done, user menu is 95% completed" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/CustomerDtoParser.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/DataInitializerFromFileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/converters/CategoryJsonConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/converters/CustomerOrderJsonConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/CategoryJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/CustomerJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/CountryJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/ProducerJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/ProductJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/ShopJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/TradeJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/StockJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataInputByUser/AdminControlFlow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="89" selection-start-line="22" selection-start-column="89" selection-end-line="22" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/stock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="26" column="6" lean-forward="true" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/CustomerOrderRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/DataInitializeFromFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="81" column="37" lean-forward="true" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/PaymentRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ProducerRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ProductRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-736">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://45c4584a-42be-4aea-9b7e-cb9ff97de6a3/schema/per01/table/product">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/entityService/ShopService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://45c4584a-42be-4aea-9b7e-cb9ff97de6a3/schema/per01/table/shop">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/dataFromFile/CustomerOrderJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="87" column="65" lean-forward="true" selection-start-line="87" selection-start-column="65" selection-end-line="87" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ShopRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="928">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/StockRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="68" column="94" selection-start-line="68" selection-start-column="94" selection-end-line="68" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/dto/CustomerOrderDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2064">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/ProductRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="41" selection-start-column="41" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/services/entityService/CustomerOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1392">
+          <caret line="99" column="77" selection-start-line="99" selection-start-column="77" selection-end-line="99" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/repository/generic/AbstractGenericRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1424">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dates.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="4" lean-forward="true" selection-start-line="1" selection-start-column="1" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/model/Dates.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/model/CustomerOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/customer_order.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://45c4584a-42be-4aea-9b7e-cb9ff97de6a3/schema/per01/table/stock">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://45c4584a-42be-4aea-9b7e-cb9ff97de6a3/schema/per01/table/customerorder">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/przemek/zochowski/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Hibernate</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>HibernateprojectCRMsystem</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,32 @@
+{
+  "shopsDto": [
+    {
+      "name": "LEROY MERLIN",
+      "countryDto": {"name": "FRANCE"}
+    },
+    {
+      "name": "BIEDRONKA",
+      "countryDto": {"name": "PORTUGAL"}
+    },
+    {
+      "name": "CASTORAMA",
+      "countryDto": {"name": "GERMANY"}
+    },
+    {
+      "name": "WALL MART",
+      "countryDto": {"name": "UNITED STATES"}
+    },
+    {
+      "name": "EURO RTV AGD",
+      "countryDto": {"name": "POLAND"}
+    },
+    {
+      "name": "APPLE STORE",
+      "countryDto": {"name": "UNITED STATES"}
+    },
+    {
+      "name": "ADDIDAS STORE",
+      "countryDto": {"name": "GERMANY"}
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "tradesDto": [
+    {
+      "industry": "TECHNOLOGY"
+    },
+    {
+      "industry": "FOOD"
+    },
+    {
+      "industry": "NUTRITION"
+    },
+    {
+      "industry": "CARS"
+    },
+    {
+      "industry": "HOUSES"
+    },
+    {
+      "industry": "TOYS"
+    },
+    {
+      "industry": "SPORT"
+    },
+    {
+      "industry": "CONSTRUCTION"
+    }
+  ]
+}

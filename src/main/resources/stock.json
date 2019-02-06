@@ -1,0 +1,34 @@
+{
+  "stocksDto": [
+    {
+      "quantity": 1,
+      "shopDto": {"name" : "BIEDRONKA"},
+      "productDto": {"name" : "MILKY WAY"}
+    },
+    {
+      "quantity": 2,
+      "shopDto": {"name" : "EURO RTV AGD"},
+      "productDto": {"name" : "PLAYSTATION"}
+    },
+    {
+      "quantity": 1,
+      "shopDto": {"name" : "APPLE STORE"},
+      "productDto": {"name" : "IPHONE X"}
+    },
+    {
+      "quantity": 2,
+      "shopDto": {"name" : "WALL MART"},
+      "productDto": {"name" : "PURE PROTEIN ISOLATE"}
+    },
+    {
+      "quantity": 1,
+      "shopDto": {"name" : "CASTORAMA"},
+      "productDto": {"name" : "TILES"}
+    },
+    {
+      "quantity": 3,
+      "shopDto": {"name" : "BIEDRONKA"},
+      "productDto": {"name" : "ADDIDAS TANGO"}
+    }
+  ]
+}
