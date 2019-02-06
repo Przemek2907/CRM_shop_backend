@@ -95,7 +95,7 @@ public class CustomerOrderService {
     //2. PREPARE A VALIDATION METHOD TO CHECK IF THE AMOUNT BEING ORDERED IS NOT EXCEEDING THE AMOUNT OF THE PRODUCT IN STOCK
 
 
-    private boolean processingTheOrder(Long productId, String shopName, int requestedAmount) {
+    public boolean processingTheOrder(Long productId, String shopName, int requestedAmount) {
         System.out.println("PLEASE WAIT, WHILE WE PROCESS YOUR ORDER");
         boolean sufficientAmountInStock = checkingIfAmountOfProductIsSufficient(productId, shopName, requestedAmount);
         try {
@@ -154,7 +154,7 @@ public class CustomerOrderService {
         return enoughAmountInStock;
     }
 
-    private BigDecimal discountGrantLogic(Product product, int requestedAmount) {
+    public BigDecimal discountGrantLogic(Product product, int requestedAmount) {
         BigDecimal discountGranted;
         if (product.getPrice().compareTo(BigDecimal.valueOf(100000)) >= 0 && requestedAmount > 10) {
             discountGranted = BigDecimal.valueOf(0.1);

@@ -1,4 +1,4 @@
-package com.przemek.zochowski.kmservice;
+package com.przemek.zochowski.services.entityService;
 
 import com.przemek.zochowski.model.CustomerOrder;
 import com.przemek.zochowski.repository.CustomerOrderRepository;

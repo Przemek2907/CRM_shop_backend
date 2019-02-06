@@ -2,14 +2,11 @@ package com.przemek.zochowski.repository;
 
 import com.przemek.zochowski.exceptions.ErrorCode;
 import com.przemek.zochowski.exceptions.MyException;
-import com.przemek.zochowski.model.Errors;
 import com.przemek.zochowski.model.Producer;
 import com.przemek.zochowski.repository.generic.AbstractGenericRepository;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
-import javax.persistence.Query;
-import java.time.LocalDateTime;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,14 +16,14 @@ public class ProducerRepositoryImpl extends AbstractGenericRepository<Producer> 
     @Override
     public Optional<Producer> findByName(String name) {
         Optional<Producer> optionalProducer = Optional.empty();
-        Session session = null;
-        Transaction tx = null;
+        EntityManager entityManager = null;
+        EntityTransaction tx = null;
 
-        try{
-            session = getSessionFactory().openSession();
-            tx = session.getTransaction();
+        try {
+            entityManager = getEntityManagerFactory().createEntityManager();
+            tx = entityManager.getTransaction();
             tx.begin();
-            List<Producer> producers = session
+            List<Producer> producers = entityManager
                     .createQuery("select p from Producer p where p.name= :name ", Producer.class)
                     .setParameter("name", name)
                     .getResultList();
@@ -44,14 +41,14 @@ public class ProducerRepositoryImpl extends AbstractGenericRepository<Producer> 
     @Override
     public int numberOfProductsProducedBy(long producerId) {
 
-        Session session = null;
-        Transaction tx = null;
+        EntityManager entityManager = null;
+        EntityTransaction tx = null;
         int number = 0;
         try {
-            session = getSessionFactory().openSession();
-            tx = session.getTransaction();
+            entityManager = getEntityManagerFactory().createEntityManager();
+            tx = entityManager.getTransaction();
             tx.begin();
-            number = session.get(Producer.class, producerId)
+            number = entityManager.find(Producer.class, producerId)
                     .getProducts()
                     .size();
             tx.commit();

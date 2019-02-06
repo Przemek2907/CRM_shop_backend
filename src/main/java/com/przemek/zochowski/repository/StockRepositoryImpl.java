@@ -2,17 +2,13 @@ package com.przemek.zochowski.repository;
 
 import com.przemek.zochowski.exceptions.ErrorCode;
 import com.przemek.zochowski.exceptions.MyException;
-import com.przemek.zochowski.model.Errors;
 import com.przemek.zochowski.model.Stock;
 import com.przemek.zochowski.repository.generic.AbstractGenericRepository;
-import com.przemek.zochowski.service.errors.ErrorService;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-import java.time.LocalDateTime;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class StockRepositoryImpl extends AbstractGenericRepository<Stock> implements StockRepository {
 
@@ -24,14 +20,15 @@ public class StockRepositoryImpl extends AbstractGenericRepository<Stock> implem
 
         Map<String, Integer> producerWithAmountOfProductsManufactured = new HashMap<>();
 
-        Session session = null;
-        Transaction tx = null;
+        EntityManager entityManager = null;
+        EntityTransaction tx = null;
 
-        try {
-            session = getSessionFactory().openSession();
-            tx = session.getTransaction();
+
+        try{
+            entityManager = getEntityManagerFactory().createEntityManager();
+            tx = entityManager.getTransaction();
             tx.begin();
-            Query query = session.createQuery("select Producer.name, SUM(Stock.quantity) from Stock, Product, Producer, Trade FETCH ALL PROPERTIES" +
+            Query query = entityManager.createQuery("select Producer.name, SUM(Stock.quantity) from Stock, Product, Producer, Trade FETCH ALL PROPERTIES" +
                     "  where Trade.industry = :industryName " +
                     "group by Producer.name" +
                     " having SUM(Stock.quantity)> :thresholdAmount ");
@@ -55,34 +52,49 @@ public class StockRepositoryImpl extends AbstractGenericRepository<Stock> implem
         } catch (Exception e) {
             e.printStackTrace();
             throw new MyException(ErrorCode.REPOSITORY, e.getMessage());
-        } finally {
-            if (session != null) {
-                session.close();
-            }
         }
         return producerWithAmountOfProductsManufactured;
     }
 
     public Long findStockIdByProductId(Long product_id) {
-        Session session = null;
-        Transaction tx = null;
+        EntityManager entityManager = null;
+        EntityTransaction tx = null;
         Long stockId = null;
 
-        try {
-            session = getSessionFactory().openSession();
-            tx = session.getTransaction();
+
+        try{
+            entityManager = getEntityManagerFactory().createEntityManager();
+            tx = entityManager.getTransaction();
             tx.begin();
-            Query query = session.createQuery("select id from Stock  where product = :product_id");
+            Query query = entityManager.createQuery("select id from Stock fetch all properties  where product.id= :product_id");
             query.setParameter("product_id", product_id);
             stockId = (Long) query.getSingleResult();
             tx.commit();
         } catch (MyException e) {
             e.printStackTrace();
             throw new MyException(ErrorCode.REPOSITORY, e.getMessage());
-        }finally {
-            if (session != null) {
-                session.close();
-            }
+        }
+        return stockId;
+    }
+
+    public Long findStockIdByProductName(String productName) {
+        EntityManager entityManager = null;
+        EntityTransaction tx = null;
+        Long stockId = null;
+
+
+        try{
+            entityManager = getEntityManagerFactory().createEntityManager();
+            tx = entityManager.getTransaction();
+            tx.begin();
+            Query query = entityManager.createQuery("select id from Stock fetch all properties where " +
+                    "product.name = :product_name");
+            query.setParameter("product_name", productName);
+            stockId = (Long) query.getSingleResult();
+            tx.commit();
+        } catch (MyException e) {
+            e.printStackTrace();
+            throw new MyException(ErrorCode.REPOSITORY, e.getMessage());
         }
         return stockId;
     }

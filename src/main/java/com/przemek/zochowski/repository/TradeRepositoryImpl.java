@@ -1,19 +1,15 @@
 package com.przemek.zochowski.repository;
 
-import com.przemek.zochowski.dto.CountryDto;
 import com.przemek.zochowski.dto.ModelMapper;
 import com.przemek.zochowski.dto.TradeDto;
 import com.przemek.zochowski.exceptions.ErrorCode;
 import com.przemek.zochowski.exceptions.MyException;
-import com.przemek.zochowski.model.Country;
-import com.przemek.zochowski.model.Errors;
 import com.przemek.zochowski.model.Trade;
 import com.przemek.zochowski.repository.generic.AbstractGenericRepository;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 public class TradeRepositoryImpl extends AbstractGenericRepository<Trade> implements TradeRepository {
@@ -26,14 +22,15 @@ public class TradeRepositoryImpl extends AbstractGenericRepository<Trade> implem
     @Override
     public Optional<Trade> findByName(String name) {
         Optional<Trade> optionalTrade = Optional.empty();
-        Session session = null;
-        Transaction tx = null;
+        EntityManager entityManager = null;
+        EntityTransaction tx = null;
+
 
         try{
-            session = getSessionFactory().openSession();
-            tx = session.getTransaction();
+            entityManager = getEntityManagerFactory().createEntityManager();
+            tx = entityManager.getTransaction();
             tx.begin();
-            Query query = session.createQuery("select t from Trade t where t.industry = :industry");
+            Query query = entityManager.createQuery("select t from Trade t where t.industry = :industry");
             query.setParameter("industry", name);
             optionalTrade = Optional.of((Trade) query.getSingleResult());
             tx.commit();
@@ -48,14 +45,15 @@ public class TradeRepositoryImpl extends AbstractGenericRepository<Trade> implem
     public Optional<Trade> findByNameAndAddIfNotFound(String name) {
         Optional<Trade> industryOptionalSubmitted = Optional.ofNullable(modelMapper.fromTradeDtoToTrade(TradeDto.builder().industry(name).build()));
         Optional<Trade> industryOptional = Optional.empty();
-        Session session = null;
-        Transaction tx = null;
+        EntityManager entityManager = null;
+        EntityTransaction tx = null;
 
-        try {
-            session = getSessionFactory().openSession();
-            tx = session.getTransaction();
+
+        try{
+            entityManager = getEntityManagerFactory().createEntityManager();
+            tx = entityManager.getTransaction();
             tx.begin();
-            Query query = session.createQuery("select t from Trade t where t.industry= :name");
+            Query query = entityManager.createQuery("select t from Trade t where t.industry= :name");
             query.setParameter("name", name);
             industryOptional = Optional.of((Trade) query.getSingleResult());
             tx.commit();

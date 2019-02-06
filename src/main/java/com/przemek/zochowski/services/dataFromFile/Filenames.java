@@ -20,4 +20,4 @@ public interface Filenames {
     String SHOP_JSON = BASE_URL +"shop.json";
     String STOCK_JSON = BASE_URL +"stock.json";
     String TRADE_JSON = BASE_URL +"trade.json";
-}
+}

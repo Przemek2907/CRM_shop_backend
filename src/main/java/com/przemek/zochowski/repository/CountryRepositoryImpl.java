@@ -5,13 +5,11 @@ import com.przemek.zochowski.dto.ModelMapper;
 import com.przemek.zochowski.exceptions.ErrorCode;
 import com.przemek.zochowski.exceptions.MyException;
 import com.przemek.zochowski.model.Country;
-import com.przemek.zochowski.model.Errors;
 import com.przemek.zochowski.repository.generic.AbstractGenericRepository;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 public class CountryRepositoryImpl extends AbstractGenericRepository<Country> implements CountryRepository  {
@@ -22,14 +20,14 @@ public class CountryRepositoryImpl extends AbstractGenericRepository<Country> im
     public Optional<Country> findByName(String name) {
         Optional<Country> countryOptionalSubmitted = Optional.ofNullable(modelMapper.fromCountryDtoToCountry(CountryDto.builder().name(name).build()));
         Optional<Country> countryOptional = Optional.empty();
-        Session session = null;
-        Transaction tx = null;
+        EntityManager entityManager = null;
+        EntityTransaction tx = null;
 
         try {
-            session = getSessionFactory().openSession();
-            tx = session.getTransaction();
+            entityManager = getEntityManagerFactory().createEntityManager();
+            tx = entityManager.getTransaction();
             tx.begin();
-            Query query = session.createQuery("select c from Country c where c.name= :name");
+            Query query =entityManager.createQuery("select c from Country c where c.name= :name");
             query.setParameter("name", name);
             countryOptional = Optional.of((Country) query.getSingleResult());
             tx.commit();

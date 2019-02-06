@@ -9,6 +9,7 @@ import java.util.Optional;
 import java.util.Set;
 
 public interface ProductRepository extends GenericRepository<Product> {
-    Optional<Product> findByName (String name);
+    Optional<Product> provideIdByProductName(String name);
+    Optional<Product> findByName(String name);
     boolean hasGuaranteeSet (Long productId, EGuarantee guarantee);
 }

@@ -1,11 +1,8 @@
-package com.przemek.zochowski.service.dataInputByUser;
+package com.przemek.zochowski.services.dataInputByUser;
 
 import com.przemek.zochowski.exceptions.MyException;
 import com.przemek.zochowski.repository.generic.DbConnection;
-import com.przemek.zochowski.service.ScannerService;
-import com.przemek.zochowski.service.errors.ErrorService;
-
-import java.util.Scanner;
+import com.przemek.zochowski.services.errors.ErrorService;
 
 public class MainControlPanel {
 

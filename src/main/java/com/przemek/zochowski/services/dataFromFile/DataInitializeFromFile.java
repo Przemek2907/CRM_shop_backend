@@ -1,23 +1,13 @@
-package com.przemek.zochowski.service.dataFromFile;
+package com.przemek.zochowski.services.dataFromFile;
 
-import com.przemek.zochowski.dto.CategoryDto;
-import com.przemek.zochowski.dto.ModelMapper;
 import com.przemek.zochowski.exceptions.ErrorCode;
 import com.przemek.zochowski.exceptions.MyException;
 import com.przemek.zochowski.model.*;
 import com.przemek.zochowski.repository.*;
 import com.przemek.zochowski.repository.generic.GenericRepository;
-import com.przemek.zochowski.service.dataInputFromJSON.CategoryJson;
-import com.przemek.zochowski.service.dataInputFromJSON.ProducerJson;
-import com.przemek.zochowski.service.dataInputFromJSON.converters.*;
 
 
-import java.io.FileReader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class DataInitializeFromFile implements DataInitializerFromFileService {
 
@@ -33,218 +23,93 @@ public class DataInitializeFromFile implements DataInitializerFromFileService {
     private CustomerOrderRepository customerOrderRepository = new CustomerOrderRepositoryImpl();
 
 
-    private ModelMapper modelMapper = new ModelMapper();
-
-
 
     @Override
-    public void initializeData() throws MyException {
-
-        List<Category> categories = getItemsFromFile(Filenames.CATEGORY_FILENAME, new CategoryDtoParser())
-                .stream()
-                .map(a-> modelMapper.fromCategoryDtoToCategory(a)).collect(Collectors.toList());
-        addAllItems(categories, categoryRepository);
-
-
-        List<Country> countries = getItemsFromFile(Filenames.COUNTRY_FILENAME, new CountryDtoParser())
-                .stream()
-                .map(b-> modelMapper.fromCountryDtoToCountry(b))
-                .collect(Collectors.toList());
-        addAllItems(countries, countryRepository);
-
-
-        List<Customer> customers = getItemsFromFile(Filenames.CUSTOMER_FILENAME, new CustomerDtoParser())
-                .stream()
-                .map(c-> modelMapper.fromCustomerDtoToCustomer(c))
-                .collect(Collectors.toList());
-        addAllItems(customers, customerRepository);
-
-
-        List<Trade> tradeList = getItemsFromFile(Filenames.TRADE_FILENAME, new TradeDtoParser())
-                .stream()
-                .map(d-> modelMapper.fromTradeDtoToTrade(d))
-                .collect(Collectors.toList());
-        System.out.println(tradeList);
-        addAllItems(tradeList, tradeRepository);
-
-
-        List<Producer> producers = getItemsFromFile(Filenames.PRODUCER_FILENAME, new ProducerDtoParser())
-                .stream()
-                .map(p -> modelMapper.fromProducerDtoToProducer(p))
-                .collect(Collectors.toList());
-        addAllItems(producers, producerRepository);
-
-        List<Shop> shops = getItemsFromFile(Filenames.SHOP_FILENAME, new ShopDtoParser())
-                .stream()
-                .map(shopDto -> modelMapper.fromShopDtoToShop(shopDto))
-                .collect(Collectors.toList());
-        addAllItems(shops, shopRepository);
-
-
-        List<Product> products = getItemsFromFile(Filenames.PRODUCT_FILENAME, new ProductDtoParser())
-                .stream()
-                .map(p-> modelMapper.fromProductDtoToProduct(p))
-                .collect(Collectors.toList());
-        addAllItems(products, productRepository);
-
-
-        List<Stock> stocks = getItemsFromFile(Filenames.STOCK_FILENAME, new StockDtoParser())
-                .stream()
-                .map(s-> modelMapper.fromStockDtoToStock(s))
-                .collect(Collectors.toList());
-        addAllItems(stocks,stockRepository);
-
-
-        List<Payment> payments = Arrays.asList(EPayment.values())
-                .stream()
-                .map(payment -> Payment.builder().payment(payment).build())
-                .collect(Collectors.toList());
-        addAllItems(payments, paymentRepository);
-
-
-        List<CustomerOrder> customerOrders =
-                getItemsFromFile(Filenames.CUSTOMER_ORDER_FILENAME, new CustomerOrderDtoParser())
-                        .stream()
-                        .map(modelMapper::fromCustomerOrderDtoToCustomerOrder)
-                        .collect(Collectors.toList());
-        addAllItems(customerOrders, customerOrderRepository);
-
-    }
-
-    // DO ZWERYFIKOWANIA NA SPOTKANIU
-
-    @Override
-    public void initializeDataFromJson() {
+    public void initializeDataFromJson() throws MyException {
         try {
 
             // CATEGORY FROM JSON ADDED TO THE DATABASE
-            List<Category> categories = new CategoryJsonConverter(Filenames.CATEGORY_JSON)
-                    .fromJson().orElseThrow(IllegalStateException::new)
-                    .getCategoriesDto()
-                    .stream()
-                    .map(modelMapper::fromCategoryDtoToCategory)
-                    .collect(Collectors.toList());
-
-            System.out.println("1 ------------------------------------------------------");
+            CategoryJson categoryJson = new CategoryJson();
+            List<Category> categories = categoryJson.createListOfUniqueCategoriesforDB();
             System.out.println(categories);
-            //addAllItems(categories, categoryRepository);
+            addAllItems(categories, categoryRepository);
 
             // COUNTRY FROM JSON ADDED TO THE DATABASE
 
             System.out.println("2 ------------------------------------------------------");
-            List<Country> countries = new CountryJsonConverter(Filenames.COUNTRY_JSON)
-                    .fromJson()
-                    .orElseThrow(IllegalStateException::new)
-                    .getCountriesDto()
-                    .stream()
-                    .map(modelMapper::fromCountryDtoToCountry)
-                    .collect(Collectors.toList());
-
-            //addAllItems(countries, countryRepository);
+            CountryJson countryJson = new CountryJson();
+            List<Country> countries = countryJson.createListOfUniqueCountriesforDB();
             System.out.println(countries);
+            addAllItems(countries, countryRepository);
 
             // CUSTOMER FROM JSON ADDED TO THE DATABASE
             System.out.println("3 ------------------------------------------------------");
-            List<Customer> customers = new CustomerJsonConverter(Filenames.CUSTOMER_JSON)
-                    .fromJson()
-                    .orElseThrow(IllegalStateException::new)
-                    .getCustomersDto()
-                    .stream()
-                    .map(modelMapper::fromCustomerDtoToCustomer)
-                    .collect(Collectors.toList());
-
-            //addAllItems(customers, customerRepository);
+            CustomerJson customerJson = new CustomerJson();
+            List<Customer> customers = customerJson.addCustomerWithCountryID(customerJson.createListOfUniqueCustomersforDB());
             System.out.println(customers);
+
+            addAllItems(customers, customerRepository);
 
 
             // TRADE FROM JSON ADDED TO THE DATABASE
             System.out.println("4 ------------------------------------------------------");
-            List<Trade> trades = new TradeJsonConverter(Filenames.TRADE_JSON)
-                    .fromJson()
-                    .orElseThrow(IllegalStateException::new)
-                    .getTradesDto()
-                    .stream()
-                    .map(modelMapper::fromTradeDtoToTrade)
-                    .collect(Collectors.toList());
+            TradeJson tradeJson = new TradeJson();
+            List<Trade> trades = tradeJson.createListOfUniqueTradeForDB();
+            addAllItems(trades, tradeRepository);
 
-            //addAllItems(trades, tradeRepository);
-            System.out.println(trades);
+            System.out.println("5 ------------------------------------------------------");
 
             // PRODUCER FROM JSON ADDED TO THE DATABASE
 
-            List<Producer> producers = new ProducerJsonConverter(Filenames.PRODUCER_JSON)
-                    .fromJson()
-                    .orElseThrow(IllegalStateException::new)
-                    .getProducersDto()
-                    .stream()
-                    .map(modelMapper::fromProducerDtoToProducer)
-                    .collect(Collectors.toList());
-
-            //addAllItems(producers, producerRepository);
+            ProducerJson producerJson = new ProducerJson();
+            List<Producer> producers = producerJson.addProducerWithRelatedTradeAndCountry(producerJson.createListOfUniqueProducersForDB());
+            addAllItems(producers, producerRepository);
             System.out.println(producers);
+
+            System.out.println("6 ------------------------------------------------------");
 
             // SHOP FROM JSON ADDED TO THE DATABASE
 
-            List<Shop> shops = new ShopJsonConverter(Filenames.SHOP_JSON)
-                    .fromJson()
-                    .orElseThrow(IllegalStateException::new)
-                    .getShopsDto()
-                    .stream()
-                    .map(modelMapper::fromShopDtoToShop)
-                    .collect(Collectors.toList());
-
-            //addAllItems(shops, shopRepository);
-            System.out.println(shops);
+           ShopJson shopJson = new ShopJson();
+           List<Shop> shops = shopJson.addShopWithRelatedCountry(shopJson.createListOfUniqueShopssForDB());
+           addAllItems(shops, shopRepository);
 
             // PRODUCT FROM JSON ADDED TO THE DATABASE
 
-            List<Product> products = new ProductJsonConverter(Filenames.PRODUCT_JSON)
-                    .fromJson()
-                    .orElseThrow(IllegalStateException::new)
-                    .getProductsDto()
-                    .stream()
-                    .map(modelMapper::fromProductDtoToProduct)
-                    .collect(Collectors.toList());
+            System.out.println("7 ------------------------------------------------------");
 
-            //addAllItems(products, productRepository);
+            ProductJson productJson = new ProductJson();
+            List<Product> products = productJson.productListWithRelatedCategoryAndProducer(productJson.createListOfUniqueProducts());
+
+            addAllItems(products, productRepository);
             System.out.println(products);
-
-
 
             // STOCK FROM JSON ADDED TO THE DATABASE
 
-            List<Stock> stocks = new StockJsonConverter(Filenames.STOCK_JSON)
-                    .fromJson()
-                    .orElseThrow(IllegalStateException::new)
-                    .getStocksDto()
-                    .stream()
-                    .map(modelMapper::fromStockDtoToStock)
-                    .collect(Collectors.toList());
+            System.out.println("8 ------------------------------------------------------");
 
-            //addAllItems(stocks, stockRepository);
-            System.out.println(stocks);
+            StockJson stockJson = new StockJson();
+            List<Stock> stocks = stockJson.addStockWithRelatedData(stockJson.createListOfUniqueStocksforDB());
+            addAllItems(stocks, stockRepository);
 
             // PAYMENT FROM JSON READ FROM THE EPAYMENT CLASS
 
-            List<Payment> payments = Arrays.asList(EPayment.values())
+            /*System.out.println("9 ------------------------------------------------------");*/
+
+          /*  List<Payment> payments = Arrays.asList(EPayment.values())
                     .stream()
                     .map(payment -> Payment.builder().payment(payment).build())
                     .collect(Collectors.toList());
-            //addAllItems(payments, paymentRepository);
-            System.out.println(payments);
+            addAllItems(payments, paymentRepository);
+            System.out.println(payments);*/
 
             // CUSTOMER ORDER FROM JSON ADDED TO THE DATABASE
+            System.out.println("10 ------------------------------------------------------");
 
-            List<CustomerOrder> customerOrders = new CustomerOrderJsonConverter(Filenames.CUSTOMER_ORDER_JSON)
-                    .fromJson()
-                    .orElseThrow(IllegalStateException::new)
-                    .getCustomerOrdersDto()
-                    .stream()
-                    .map(modelMapper::fromCustomerOrderDtoToCustomerOrder)
-                    .collect(Collectors.toList());
+            CustomerOrderJson customerOrderJson = new CustomerOrderJson();
+            List<CustomerOrder> customerOrders = customerOrderJson.addingCustomerOrdersWithRelatedDataToDB(customerOrderJson.createListOfOrdersFroDB());
 
-            //addAllItems(customerOrders, customerOrderRepository);
-            System.out.println(customerOrders);
+            addAllItems(customerOrders, customerOrderRepository);
 
         } catch (Exception e){
             e.printStackTrace();
@@ -252,16 +117,6 @@ public class DataInitializeFromFile implements DataInitializerFromFileService {
         }
     }
 
-    private <T> List<T> getItemsFromFile(String filename, Parser<T> parser) {
-        try (
-                FileReader reader = new FileReader(filename);
-                Scanner sc = new Scanner(reader);
-                Stream<String> lines = Files.lines(Paths.get(filename))) {
-            return lines.map(line -> parser.parse(line)).collect(Collectors.toList());
-        } catch (Exception e) {
-            throw new MyException(ErrorCode.FILE_PARSER, e.getMessage());
-        }
-    }
 
     private <T> void addAllItems(List<T> items, GenericRepository<T> repository) {
         if (items != null) {

@@ -1,4 +1,4 @@
-package com.przemek.zochowski.service;
+package com.przemek.zochowski.services.dataInputByUser;
 
 import com.przemek.zochowski.model.EGuarantee;
 import com.przemek.zochowski.model.Stock;

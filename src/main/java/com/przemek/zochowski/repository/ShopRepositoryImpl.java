@@ -2,15 +2,13 @@ package com.przemek.zochowski.repository;
 
 import com.przemek.zochowski.exceptions.ErrorCode;
 import com.przemek.zochowski.exceptions.MyException;
-import com.przemek.zochowski.model.Errors;
 import com.przemek.zochowski.model.Shop;
 import com.przemek.zochowski.repository.generic.AbstractGenericRepository;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,14 +18,15 @@ public class ShopRepositoryImpl extends AbstractGenericRepository<Shop> implemen
     @Override
     public Optional<Shop> findByName(String name) {
         Optional<Shop> optionalShop = Optional.empty();
-        Session session = null;
-        Transaction tx = null;
+        EntityManager entityManager = null;
+        EntityTransaction tx = null;
+
 
         try{
-            session = getSessionFactory().openSession();
-            tx = session.getTransaction();
+            entityManager = getEntityManagerFactory().createEntityManager();
+            tx = entityManager.getTransaction();
             tx.begin();
-            Query query = session.createQuery("select s from Shop s where s.name = :name");
+            Query query = entityManager.createQuery("select s from Shop s where s.name = :name");
             query.setParameter("name", name);
             optionalShop = Optional.of((Shop) query.getSingleResult());
             tx.commit();
@@ -41,19 +40,18 @@ public class ShopRepositoryImpl extends AbstractGenericRepository<Shop> implemen
     @Override
     public Optional<Shop> findByNameAndCountry(String name, String country) {
         Optional<Shop> optionalShop = Optional.empty();
-        Session session = null;
-        Transaction tx = null;
+        EntityManager entityManager = null;
+        EntityTransaction tx = null;
+
 
         try{
-            session = getSessionFactory().openSession();
-            tx = session.getTransaction();
+            entityManager = getEntityManagerFactory().createEntityManager();
+            tx = entityManager.getTransaction();
             tx.begin();
-            List<Shop> shopList = session.createQuery("select  s from Shop s" +
+            List<Shop> shopList = entityManager.createQuery("select  s from Shop s" +
                     " where s.name = :name ", Shop.class)
                     .setParameter("name", name)
                     .getResultList();
-
-
                 shopList.stream()
                     .filter(shop -> shop.getCountry().getName().equals(country));
             if (!shopList.isEmpty()){
@@ -66,4 +64,9 @@ public class ShopRepositoryImpl extends AbstractGenericRepository<Shop> implemen
 
         return optionalShop;
     }
+
+
+
+
+
 }

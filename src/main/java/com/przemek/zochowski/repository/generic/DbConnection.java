@@ -3,16 +3,16 @@ package com.przemek.zochowski.repository.generic;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 public class DbConnection {
 
     private static DbConnection myInstance = new DbConnection();
 
-    private SessionFactory sessionFactory
-            = new Configuration().configure().buildSessionFactory();
+    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HBN");
 
-    public SessionFactory getSessionFactory(){
-        return sessionFactory;
-    }
 
     public static DbConnection getInstance() {
         return myInstance;
@@ -21,11 +21,15 @@ public class DbConnection {
     private DbConnection (){
     }
 
-    public void close(){
-        if (sessionFactory != null) {
-            sessionFactory.close();
-        }
+    public EntityManagerFactory getEntityManagerFactory() {
+        return entityManagerFactory;
     }
+
+    public void close(){
+       if (entityManagerFactory != null){
+           entityManagerFactory.close();
+       }
+   }
 
 
 }

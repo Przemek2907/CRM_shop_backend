@@ -1,12 +1,8 @@
-package com.przemek.zochowski.service.dataInputByUser;
+package com.przemek.zochowski.services.dataInputByUser;
 
-import com.przemek.zochowski.kmservice.CustomerOrderService;
-import com.przemek.zochowski.kmservice.CustomerService;
-import com.przemek.zochowski.kmservice.ProductService;
-import com.przemek.zochowski.kmservice.StockService;
-import com.przemek.zochowski.service.DataManager;
-import com.przemek.zochowski.service.ScannerService;
-import org.hibernate.tool.schema.internal.exec.ScriptTargetOutputToFile;
+import com.przemek.zochowski.services.entityService.CustomerOrderService;
+import com.przemek.zochowski.services.entityService.CustomerService;
+import com.przemek.zochowski.services.entityService.StockService;
 
 import java.time.LocalDate;
 import java.util.*;

@@ -24,35 +24,6 @@ public class TradeDto {
         return new TradeDtoBuilder();
     }
 
-   /* public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getIndustry() {
-        return industry;
-    }
-
-    public void setIndustry(String industry) {
-        this.industry = industry;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        TradeDto tradeDto = (TradeDto) o;
-        return Objects.equals(id, tradeDto.id) &&
-                Objects.equals(industry, tradeDto.industry);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, industry);
-    }*/
 
     public static class TradeDtoBuilder {
         private Long id;

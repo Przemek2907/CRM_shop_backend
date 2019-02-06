@@ -11,6 +11,8 @@ import lombok.Data;
 import javax.validation.constraints.Null;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -37,71 +39,6 @@ public class ProductDto {
         return new ProductDtoBuilder();
     }
 
-   /* public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public ProducerDto getProducerDto() {
-        return producerDto;
-    }
-
-    public void setProducerDto(ProducerDto producerDto) {
-        this.producerDto = producerDto;
-    }
-
-    public CategoryDto getCategoryDto() {
-        return categoryDto;
-    }
-
-    public void setCategoryDto(CategoryDto categoryDto) {
-        this.categoryDto = categoryDto;
-    }
-
-    public Set<EGuarantee> getGuarantees() {
-        return guarantees;
-    }
-
-    public void setGuarantees(Set<EGuarantee> guarantees) {
-        this.guarantees = guarantees;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ProductDto that = (ProductDto) o;
-        return Objects.equals(id, that.id) &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(price, that.price) &&
-                Objects.equals(producerDto, that.producerDto) &&
-                Objects.equals(categoryDto, that.categoryDto) &&
-                Objects.equals(guarantees, that.guarantees);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, price, producerDto, categoryDto, guarantees);
-    }*/
 
     public static class ProductDtoBuilder {
         private Long id;
@@ -177,7 +114,7 @@ public class ProductDto {
         public ProductDtoBuilder guarantees (Set<EGuarantee> guarantees){
             try{
                 if (guarantees.isEmpty()){
-                    throw new NullPointerException("NO GUARANTEE PROVIDED FOR THE PRODUCT");
+                   this.guarantees = new HashSet<>(Arrays.asList(EGuarantee.valueOf("HELP_DESK")));
                 }
                  this.guarantees = guarantees;
                 return this;
