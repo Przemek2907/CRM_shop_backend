@@ -1,9 +1,9 @@
-package com.przemek.zochowski.kmservice;
+package com.przemek.zochowski.services.entityService;
 
 
+import com.przemek.zochowski.services.dataInputByUser.DataManager;
 import com.przemek.zochowski.repository.StockRepository;
 import com.przemek.zochowski.repository.StockRepositoryImpl;
-import com.przemek.zochowski.service.DataManager;
 
 import java.util.List;
 import java.util.stream.Collectors;

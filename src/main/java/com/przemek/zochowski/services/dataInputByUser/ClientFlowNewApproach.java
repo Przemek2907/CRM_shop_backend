@@ -17,7 +17,6 @@ public class ClientFlowNewApproach {
     private static final String option1 = "1. I AM A REGISTERED CLIENT AND I WOULD LIKE TO PLACE AN ORDER.";
     private static final String option2 = "2. I WOULD LIKE TO SET UP A NEW ACCOUNT.";
     private CustomerService customerService = new CustomerService();
-    private ProductService productService = new ProductService();
     private DataManager dataManager = new DataManager();
     private StockService stockService = new StockService();
     private CustomerOrderService customerOrderService = new CustomerOrderService();

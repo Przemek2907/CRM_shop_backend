@@ -40,6 +40,8 @@ public class DataManager {
     private Long theIdOfTheSelectedProduct;
     private Integer choiceId;
     private Integer thresholdAmount;
+    private LocalDate localDateTo;
+    private BigDecimal orderValue;
 
 
     @Override
@@ -61,7 +63,6 @@ public class DataManager {
         message.append(price == null  ? "" : "PRICE: " + price + "\n");
         message.append(discount == null ? "" : "DISCOUNT: " + discount + "\n");
         message.append(localDate == null ? "" : "LOCAL DATE: " + localDate + "\n");
-        message.append(theIdOfTheSelectedProduct == null ? "" : "ID OF THE PRODUCT: " + theIdOfTheSelectedProduct + "\n");
         message.append(theIdOfTheSelectedProduct == null ? "" : "ID OF THE PRODUCT: " + theIdOfTheSelectedProduct + "\n");
         message.append( min_age_range == null ? "" : "MINIMUM AGE RANGE: " + min_age_range + "\n");
         message.append( max_age_range == null ? "" : "MAXIMUM AGE RANGE: " + max_age_range + "\n");

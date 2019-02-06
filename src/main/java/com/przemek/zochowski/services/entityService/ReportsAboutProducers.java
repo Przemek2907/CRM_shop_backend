@@ -1,4 +1,4 @@
-package com.przemek.zochowski.kmservice;
+package com.przemek.zochowski.services.entityService;
 
 import com.przemek.zochowski.dto.ModelMapper;
 import com.przemek.zochowski.dto.ProducerDto;

@@ -1,14 +1,13 @@
-package com.przemek.zochowski.kmservice;
+package com.przemek.zochowski.services.entityService;
 
 import com.przemek.zochowski.dto.ModelMapper;
 import com.przemek.zochowski.dto.ProductDto;
 import com.przemek.zochowski.exceptions.ErrorCode;
 import com.przemek.zochowski.exceptions.MyException;
 import com.przemek.zochowski.model.*;
+import com.przemek.zochowski.services.dataInputByUser.DataManager;
 import com.przemek.zochowski.repository.*;
-import com.przemek.zochowski.service.DataManager;
 
-import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 

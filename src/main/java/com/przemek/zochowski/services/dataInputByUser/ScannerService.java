@@ -1,11 +1,10 @@
-package com.przemek.zochowski.service;
+package com.przemek.zochowski.services.dataInputByUser;
 
 import com.przemek.zochowski.exceptions.ErrorCode;
 import com.przemek.zochowski.exceptions.MyException;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class ScannerService {

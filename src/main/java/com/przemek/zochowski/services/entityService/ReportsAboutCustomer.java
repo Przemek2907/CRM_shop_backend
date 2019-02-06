@@ -1,11 +1,9 @@
-package com.przemek.zochowski.kmservice;
+package com.przemek.zochowski.services.entityService;
 
-import com.przemek.zochowski.dto.CustomerOrderDto;
-import com.przemek.zochowski.model.Customer;
 import com.przemek.zochowski.model.CustomerOrder;
+import com.przemek.zochowski.services.dataInputByUser.DataManager;
 import com.przemek.zochowski.repository.CustomerOrderRepository;
 import com.przemek.zochowski.repository.CustomerOrderRepositoryImpl;
-import com.przemek.zochowski.service.DataManager;
 
 import java.util.List;
 import java.util.stream.Collectors;

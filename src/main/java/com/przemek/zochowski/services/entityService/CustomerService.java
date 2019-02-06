@@ -87,6 +87,7 @@ public class CustomerService {
             customerRepository.addOrUpdate(customer);
 
         } catch (Exception e) {
+            e.printStackTrace();
             throw new MyException(ErrorCode.SERVICE, e.getMessage());
         }
     }
