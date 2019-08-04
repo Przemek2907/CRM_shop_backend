@@ -19,7 +19,7 @@ public class AdminControlFlow {
             "AMOUNT OF STOCK, HIGHER THAN YOU SELECTED?";
     private static final String option7 = "7. GENERATE A REPORT WITH THE LIST OF ORDERS PLACED WITHIN SELECTED DATE RANGE AND OF A TOTAL VALUE (EXCLUDING DISCOUNT)?";
     private static final String option8 = "8. GENERATE A REPORT WITH THE LIST OF PRODUCTS ORDERED BY A SPECIFIC CUSTOMER?";
-    private static final String option9 = "9. GENERATE A REPORT WITH THE LIST OF PRODUCTS MADE IN THE SAME COUNTRY AS THE MOTHER COUNTRY OF A CUSTOMER";
+    private static final String option9 = "9. GENERATE A REPORT WITH THE LIST OF CUSTOMERS, WHO ORDERED PRODUCTS FROM THEIR MOTHER COUNTRY";
     private static final List<String> optionList = new ArrayList<>(Arrays.asList(option1,option2,option3,option4,option5,option6,option7,option8,option9));
     private ReportsAboutProducts reportsAboutProducts = new ReportsAboutProducts();
     private ReportsAboutShops reportsAboutShops = new ReportsAboutShops();

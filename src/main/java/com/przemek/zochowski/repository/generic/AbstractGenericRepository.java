@@ -118,7 +118,6 @@ public abstract class AbstractGenericRepository<T> implements GenericRepository<
             session = getEntityManagerFactory().createEntityManager();
             tx = session.getTransaction();
             boolean isConnectionActive = session.getTransaction().isActive();
-            System.out.println(isConnectionActive);
             tx.begin();
             Query query = session.createQuery("select i from " + entityClass.getCanonicalName() + " i");
             items = query.getResultList();
