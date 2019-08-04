@@ -28,4 +28,4 @@ For the purpose of the validation of the data input, a BUILDER design pattern ha
      * again load the data from JSON files into the Database;
      * create a different kind of console reports (the options will be provided to you in the console)
      
- ###Enjoy! 
+ ### Enjoy! 
